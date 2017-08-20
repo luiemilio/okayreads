@@ -1,30 +1,39 @@
 ## Component Hierarchy
 
-**AuthFormContainer**
- - AuthForm
-
-**MyBooksContainer**
+**HomePageContainer**
 - Header
-- Shelves sidebar
+  * LoginForm
+- SignupForm
+
+**AllBooksContainer**
+- Header
+  * All books link
+  * Logout button
+- Shelves
+
+**ShelfContainer**
+- Header
 - Book list
 
 **BookContainer**
 - Header
 - Book
-  * Image and description
+  * Image
+  * Description
+  * Status
+  * Bookshelf
+- Add Review Modal
 - Reviews
 
-**BookshelfContainer**
-- Header
-- Shelf's book list
-
+**ReviewContainer**
+- Author
+- Review
 
 ## Routes
 
-|Path   | Component   |
-|-------|-------------|
-| "/sign-up" | "AuthFormContainer" |
-| "/sign-in" | "AuthFormContainer" |
-| "/home" | "MyBooksContainer" |
-| "/books/:bookId" | "BookContainer" |
-| "/home/shelf/:shelfId/" | "ShelfContainer" |
+|Path                         |Component            |
+|-----------------------------|---------------------|
+| "/"                         | "HomePageContainer" |
+| "/books"                    | "AllBooksContainer" |
+| "/books/bookshelf/:shelfId" | "ShelfContainer"    |
+| "books/:bookId"             | "BookContainer"     |
