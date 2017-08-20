@@ -1,8 +1,10 @@
 # okayreads
 
-[Heroku Link][] Heroku Link will go here
+[Heroku Link] Heroku Link will go here
 
-[Trello Link][https://trello.com/b/UhNrHi99/okayreads]
+[Trello Link][trello]
+
+[trello]: [https://trello.com/b/UhNrHi99/okayreads]
 
 Okayreads is a web application inspired by Goodreads built using Ruby on Rails for
 the backend, React/Redux libraries for the frontend and PostgreSQL for the database.
