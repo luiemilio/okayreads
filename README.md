@@ -24,8 +24,8 @@ the backend, React/Redux libraries for the frontend and PostgreSQL for the datab
 * [Sample State][sample-state]
 
 [wireframes]: docs/wireframes
-[components]: docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
+[components]: docs/component_hierarchy.md
+[sample-state]: docs/sample_state.md
 [api-endpoints]: docs/api-endpoints.md
 [schema]: docs/schema.md
 
