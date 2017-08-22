@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Books extends React.Component {
+class BookIndex extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -14,4 +14,4 @@ class Books extends React.Component {
   }
 }
 
-export default Books;
+export default BookIndex;

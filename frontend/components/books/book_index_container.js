@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Books from './books';
+import BookIndex from './book_index';
 
 const mapStateToProps = (state) => {
   return { state };
@@ -15,4 +15,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Books);
+)(BookIndex);
