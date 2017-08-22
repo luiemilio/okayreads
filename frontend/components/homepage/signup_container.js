@@ -7,7 +7,7 @@ const mapStateToProps = ({ session }) => {
   return {
     currentUser: session.currentUser,
     loggedIn: Boolean(session.currentUser),
-    errors: session.errors,
+    errors: session.errors.signup,
    };
 };
 
