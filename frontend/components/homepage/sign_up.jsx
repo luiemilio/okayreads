@@ -25,22 +25,24 @@ class SignUp extends React.Component {
 
   render() {
     return (
-      <div className="homepage-signup-div">
-----------------------------------------------------------
-        <h3>Sign Up!</h3>
-        <form className="homepage-signup-form" onSubmit={ this.handleSubmit }>
-          <input
-            type="text"
-            value={ this.state.username }
-            onChange = { this.update('username') }
-            placeholder="Username"/>
+      <div className="homepage-signup-main-div">
+        <h2>Your favorite book is here!</h2>
+        <div className="homepage-signup-form-div">
+          <h3>Sign Up!</h3>
+          <form className="homepage-signup-form" onSubmit={ this.handleSubmit }>
+            <input
+              type="text"
+              value={ this.state.username }
+              onChange = { this.update('username') }
+              placeholder="Username"/>
             <input
               type="text"
               value={ this.state.password }
               onChange = { this.update('password') }
               placeholder="Password"/>
             <input type="submit" name="" value="Submit"/>
-        </form>
+          </form>
+        </div>
       </div>
     );
   }

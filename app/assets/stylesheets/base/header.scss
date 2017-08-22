@@ -1,24 +1,20 @@
-.homepage-signup-main-div {
-  padding-top: 25px;
+.header {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   background-color: #F4F1EA;
+  height: 65px;
   font-family: 'Roboto', sans-serif;
+  border-bottom: 1px solid black;
 }
 
-.homepage-signup-form-div {
-  display: flex;
-  flex-direction: column;
+.header h1 {
+  font-family: 'Baloo Bhaijaan', cursive;
+  font-size: 40px;
 }
 
-.homepage-signup-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.homepage-signup-form input[type="text"] {
+.header input[type="text"] {
   background: #FFFFFF;
   border-radius: 3px;
   border: #DCD6CC 1px solid;
@@ -29,7 +25,7 @@
   font-size: 12px;
 }
 
-.homepage-signup-form input[type="submit"] {
+.header input[type="submit"] {
   background-color: #382110;
   color: white;
   border-radius: 7px;
@@ -38,5 +34,20 @@
   height: 20px;
   text-align: center;
   font-size: 12px;
-  margin-bottom: 10px;
+}
+
+.header button {
+  background-color: #382110;
+  color: white;
+  border-radius: 7px;
+  box-shadow: none;
+  width: 60px;
+  height: 20px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.header h3 {
+  align-self: flex-end;
+  flex-direction: row;
 }

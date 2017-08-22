@@ -14,7 +14,11 @@
  *= require_self
  */
 
- // CSS Reset
+ /*CSS Reset*/
  @import "base/reset.scss";
 
+/*Header*/
+ @import "base/header.scss";
+
+ /*Homepage*/
  @import "base/homepage.scss";
