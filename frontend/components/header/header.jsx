@@ -8,6 +8,7 @@ class Header extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   update(field) {
@@ -23,19 +24,31 @@ class Header extends React.Component {
     });
   }
 
+  handleClick(e) {
+    this.props.logout().then(() => {
+      this.props.history.push('/');
+    });
+  }
+
   render() {
     if (this.props.loggedIn) {
       return (
         <div className="header">
-          <h1>okayreads</h1>
+          <div className="header-img-logo">
+            <img src="https://cdn.pixabay.com/photo/2016/09/10/17/18/book-1659717_960_720.jpg"/>
+            <h1>okayreads</h1>
+          </div>
           <h3>Hi, {this.props.currentUser.username}</h3>
-          <button onClick={this.props.logout}>Log Out</button>
+          <button onClick={this.handleClick}>Log Out</button>
         </div>
       );
     } else {
       return (
         <div className="header">
-          <h1>okayreads</h1>
+          <div className="header-img-logo">
+            <img src="https://cdn.pixabay.com/photo/2016/09/10/17/18/book-1659717_960_720.jpg"/>
+            <h1>okayreads</h1>
+          </div>
           <form className="header-login-form" onSubmit={ this.handleSubmit }>
             <input
               type="text"
@@ -47,8 +60,9 @@ class Header extends React.Component {
               value={ this.state.password }
               onChange = { this.update('password') }
               placeholder="Password"/>
-            <input type="submit" name="" value="Sign in"/>
+            <input type="submit" value="Sign in"/>
           </form>
+          <h3 className="errors">{this.props.errors}</h3>
         </div>
       );
     }

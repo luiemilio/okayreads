@@ -1,5 +1,5 @@
 import React from 'react';
-import HomepageContainer from './homepage/homepage_container';
+import SignUpContainer from './homepage/signup_container';
 import BooksContainer from './books/books_container';
 import HeaderContainer from './header/header_container';
 import { Route, Switch, NavLink, Link } from 'react-router-dom';
@@ -10,7 +10,7 @@ const App = () => (
       <HeaderContainer />
     </header>
 
-    <Route exact path="/" component={HomepageContainer}/>
+    <Route exact path="/" component={SignUpContainer}/>
     <Route path="/books" component={BooksContainer} />
   </div>
 );

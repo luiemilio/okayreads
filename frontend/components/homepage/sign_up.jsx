@@ -26,10 +26,10 @@ class SignUp extends React.Component {
   render() {
     return (
       <div className="homepage-signup-main-div">
-        <h2>Your favorite book is here!</h2>
         <div className="homepage-signup-form-div">
           <h3>Sign Up!</h3>
           <form className="homepage-signup-form" onSubmit={ this.handleSubmit }>
+            <h2>{this.props.errors}</h2>
             <input
               type="text"
               value={ this.state.username }
