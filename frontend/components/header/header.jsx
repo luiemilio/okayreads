@@ -7,6 +7,7 @@ class Header extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleLogoutClick = this.handleLogoutClick.bind(this);
     this.handleGuestClick = this.handleGuestClick.bind(this);
+    this.handleAllBooksClick = this.handleAllBooksClick.bind(this);
   }
 
   update(field) {
@@ -35,6 +36,10 @@ class Header extends React.Component {
     });
   }
 
+  handleAllBooksClick(e) {
+    this.props.history.push('/books');
+  }
+
   render() {
     if (this.props.loggedIn) {
       return (
@@ -43,6 +48,7 @@ class Header extends React.Component {
             <img src="http://i.imgur.com/MKQ4nC3.jpg"/>
             <h1>okayreads</h1>
           </div>
+          <button onClick={this.handleAllBooksClick}>Books</button>
           <h3>Hi, {this.props.currentUser.username}</h3>
           <button onClick={this.handleLogoutClick}>Log Out</button>
         </div>
@@ -67,7 +73,7 @@ class Header extends React.Component {
               placeholder="Password"/>
             <input type="submit" value="Sign in"/>
           </form>
-          <button onClick={this.handleGuestClick}>Guest</button>
+          <button onClick={this.handleGuestClick}>Demo</button>
           <h3 className="errors">{this.props.errors}</h3>
         </div>
       );

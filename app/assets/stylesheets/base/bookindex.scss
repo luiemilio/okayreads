@@ -1,18 +1,23 @@
 .book-index-main-div {
   display: flex;
-  height: 100%;
 }
 
-.book-index-main-div ul {
+.book-index {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .book-index-main-div img {
+  display: flex;
   width: 130px;
   height: 190px;
   padding: 5px;
   margin: 5px;
   border: 2px solid brown;;
-  // background-color: #382110;
-  // border-color: solid black;
+}
+
+.book-index-main-div li {
+  display: flex;
+  flex-wrap: wrap;
 }

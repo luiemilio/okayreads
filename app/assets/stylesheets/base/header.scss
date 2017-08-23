@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+
 .header {
   display: flex;
   flex-direction: row;
@@ -5,12 +7,13 @@
   align-items: center;
   background-color: #F4F1EA;
   height: 65px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Merriweather', serif;
   border-bottom: 1px solid black;
 }
 
 .header h1 {
-  font-family: 'Baloo Bhaijaan', cursive;
+  color: #382110;
+  font-family: 'Merriweather', serif;
   font-size: 40px;
 }
 
@@ -37,6 +40,7 @@
 }
 
 .header button {
+  align-self: center;
   background-color: #382110;
   color: white;
   border-radius: 7px;
