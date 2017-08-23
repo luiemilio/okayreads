@@ -3,12 +3,10 @@ import React from 'react';
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      username: '',
-      password: ''
-    };
+    this.state = { username: '', password: '' };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleLogoutClick = this.handleLogoutClick.bind(this);
+    this.handleGuestClick = this.handleGuestClick.bind(this);
   }
 
   update(field) {
@@ -24,9 +22,16 @@ class Header extends React.Component {
     });
   }
 
-  handleClick(e) {
+  handleLogoutClick(e) {
     this.props.logout().then(() => {
       this.props.history.push('/');
+    });
+  }
+
+  handleGuestClick(e) {
+    const guest = {username: "guest", password: "password"};
+    this.props.login(guest).then(() => {
+      this.props.history.push('/books');
     });
   }
 
@@ -35,18 +40,18 @@ class Header extends React.Component {
       return (
         <div className="header">
           <div className="header-img-logo">
-            <img src="https://cdn.pixabay.com/photo/2016/09/10/17/18/book-1659717_960_720.jpg"/>
+            <img src="http://i.imgur.com/MKQ4nC3.jpg"/>
             <h1>okayreads</h1>
           </div>
           <h3>Hi, {this.props.currentUser.username}</h3>
-          <button onClick={this.handleClick}>Log Out</button>
+          <button onClick={this.handleLogoutClick}>Log Out</button>
         </div>
       );
     } else {
       return (
         <div className="header">
           <div className="header-img-logo">
-            <img src="https://cdn.pixabay.com/photo/2016/09/10/17/18/book-1659717_960_720.jpg"/>
+            <img src="http://i.imgur.com/MKQ4nC3.jpg"/>
             <h1>okayreads</h1>
           </div>
           <form className="header-login-form" onSubmit={ this.handleSubmit }>
@@ -61,6 +66,7 @@ class Header extends React.Component {
               onChange = { this.update('password') }
               placeholder="Password"/>
             <input type="submit" value="Sign in"/>
+            <button onClick={this.handleGuestClick}>Guest</button>
           </form>
           <h3 className="errors">{this.props.errors}</h3>
         </div>
