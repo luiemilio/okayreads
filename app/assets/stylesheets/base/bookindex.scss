@@ -1,0 +1,23 @@
+.book-index-main-div {
+  display: flex;
+}
+
+.book-index {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.book-index-main-div img {
+  display: flex;
+  width: 130px;
+  height: 190px;
+  padding: 5px;
+  margin: 5px;
+  border: 2px solid brown;;
+}
+
+.book-index-main-div li {
+  display: flex;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+
+.book-show-main-div {
+  display: flex;
+  font-family: 'Merriweather', serif;
+}
+
+.book-show-description-div {
+  margin-left: 10px;
+  border-bottom: 1px solid brown;
+  width: 375px;
+};
+
+.book-show-description-div h2 {
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+  margin-top: 5px;
+};
+
+.book-show-description-div span {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  font-style: normal;
+  margin: 2px;
+};
+
+.book-show-description-div p {
+  font-size: 14px;
+  font-style: normal;
+  margin-top: 10px;
+};
+
+.book-show-main-div img {
+  width: 150px;
+}

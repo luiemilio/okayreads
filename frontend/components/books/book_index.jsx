@@ -1,14 +1,25 @@
 import React from 'react';
+import BookIndexItem from './book_index_item';
 
 class BookIndex extends React.Component {
   constructor(props) {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.requestAllBooks();
+  }
+
   render(){
+    const books = this.props.books;
     return (
-      <div>
-        THIS IS THE BOOKS PAGE!
+      <div className="book-index-main-div">
+        <div>
+          SHELVES WILL GO HERE!
+        </div>
+        <ul className="book-index">
+          {books.map(book => <BookIndexItem key={book.id} book={book}/>)}
+        </ul>
       </div>
     );
   }
