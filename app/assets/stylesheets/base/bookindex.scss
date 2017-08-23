@@ -1,5 +1,5 @@
 .book-index-main-div {
-  background-color: #F4F1EA;
+  display: flex;
   height: 100%;
 }
 
@@ -12,5 +12,7 @@
   height: 190px;
   padding: 5px;
   margin: 5px;
-  border: 2px solid brown;
+  border: 2px solid brown;;
+  // background-color: #382110;
+  // border-color: solid black;
 }
