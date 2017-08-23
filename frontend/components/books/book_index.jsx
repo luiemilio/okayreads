@@ -1,5 +1,6 @@
 import React from 'react';
 import BookIndexItem from './book_index_item';
+import BookIndexContainer from '../bookshelves/bookshelf_index_container';
 
 class BookIndex extends React.Component {
   constructor(props) {
@@ -14,9 +15,7 @@ class BookIndex extends React.Component {
     const books = this.props.books;
     return (
       <div className="book-index-main-div">
-        <div>
-          SHELVES WILL GO HERE!
-        </div>
+        <BookIndexContainer />
         <ul className="book-index">
           {books.map(book => <BookIndexItem key={book.id} book={book}/>)}
         </ul>

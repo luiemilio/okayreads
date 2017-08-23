@@ -5,7 +5,7 @@ import BookIndex from './book_index';
 
 const mapStateToProps = (state) => {
   return {
-    books: selectAllBooks(state)
+    books: selectAllBooks(state),
   };
 };
 
