@@ -66,8 +66,8 @@ class Header extends React.Component {
               onChange = { this.update('password') }
               placeholder="Password"/>
             <input type="submit" value="Sign in"/>
-            <button onClick={this.handleGuestClick}>Guest</button>
           </form>
+          <button onClick={this.handleGuestClick}>Guest</button>
           <h3 className="errors">{this.props.errors}</h3>
         </div>
       );
