@@ -20,6 +20,7 @@ class BookShow extends React.Component {
           <div className="book-show-description-div">
             <h2>{this.props.book.title}</h2>
             <span>by: {this.props.book.author}</span>
+            <span>Publisher: {this.props.book.publisher}</span>
             <p>{this.props.book.description}</p>
           </div>
         </div>
