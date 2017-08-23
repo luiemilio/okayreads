@@ -2,7 +2,7 @@ import merge from 'lodash/merge';
 
 import { RECEIVE_ALL_BOOKS, RECEIVE_SINGLE_BOOK } from '../actions/book_actions';
 
-export const BooksReducer = (state = {}, action) => {
+const BooksReducer = (state = {}, action) => {
   Object.freeze(state);
 
   switch(action.type) {
@@ -15,3 +15,5 @@ export const BooksReducer = (state = {}, action) => {
   }
 
 };
+
+export default BooksReducer;
