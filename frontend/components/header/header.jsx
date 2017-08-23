@@ -3,10 +3,7 @@ import React from 'react';
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      username: '',
-      password: ''
-    };
+    this.state = { username: '', password: '' };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleLogoutClick = this.handleLogoutClick.bind(this);
     this.handleGuestClick = this.handleGuestClick.bind(this);
