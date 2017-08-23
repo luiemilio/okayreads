@@ -14,7 +14,7 @@ export const receiveSingleBook = book => ({
 });
 
 
-export const requestAllBooks = () => dispatch => (
+export const requestAllBooks = () => (dispatch) => (
   APIUtil.fetchAllBooks().then(books => (
     dispatch(receiveAllBooks(books))
   ))

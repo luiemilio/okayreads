@@ -26,7 +26,7 @@ Book.create!(title: "Slaughterhouse-Five",
             author: "Kurt Vonnegut",
             image_url: "http://i.imgur.com/8pbh3jO.jpg",
             publisher: "Dial Press Trade Paperback",
-            description: "Kurt Vonnegut&quot;s absurdist classic Slaughterhouse-Five introduces us to Billy Pilgrim, a man who becomes unstuck in time after he is abducted by aliens from the planet Tralfamadore. In a plot-scrambling display of virtuosity, we follow Pilgrim simultaneously through all phases of his life, concentrating on his (and Vonnegut&quot;s) shattering experience as an American prisoner of war who witnesses the firebombing of Dresden.
+            description: "Kurt Vonnegut's absurdist classic Slaughterhouse-Five introduces us to Billy Pilgrim, a man who becomes unstuck in time after he is abducted by aliens from the planet Tralfamadore. In a plot-scrambling display of virtuosity, we follow Pilgrim simultaneously through all phases of his life, concentrating on his (and Vonnegut&quot;s) shattering experience as an American prisoner of war who witnesses the firebombing of Dresden.
 
 Don&quot;t let the ease of reading fool you - Vonnegut&quot;s isn&quot;t a conventional, or simple, novel. He writes, There are almost no characters in this story, and almost no dramatic confrontations, because most of the people in it are so sick, and so much the listless playthings of enormous forces. One of the main effects of war, after all, is that people are discouraged from being characters.
 
