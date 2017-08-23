@@ -4,7 +4,6 @@ import { login, logout, signup } from '../../actions/session_actions';
 import Header from './header';
 
 const mapStateToProps = ({ session }) => {
-  debugger
   return {
     currentUser: session.currentUser,
     loggedIn: Boolean(session.currentUser),
