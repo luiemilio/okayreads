@@ -10,6 +10,12 @@ class SignUp extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    if (this.props.loggedIn) {
+      this.props.history.push('/books');
+    }
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value

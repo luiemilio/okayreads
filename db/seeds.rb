@@ -105,3 +105,10 @@ Book.create!(title: "A Game of Thrones",
 As Warden of the north, Lord Eddard Stark counts it a curse when King Robert bestows on him the office of the Hand. His honour weighs him down at court where a true man does what he will, not what he must … and a dead enemy is a thing of beauty.
 
 The old gods have no power in the south, Stark’s family is split and there is treachery at court. Worse, the vengeance-mad heir of the deposed Dragon King has grown to maturity in exile in the Free Cities. He claims the Iron Throne.")
+
+Bookshelf.destroy_all
+
+Bookshelf.create!(name:"Fiction", user_id: User.find_by(username: "guest").id)
+Bookshelf.create!(name:"Non-fiction", user_id: User.find_by(username: "guest").id)
+Bookshelf.create!(name:"Fantasy", user_id: User.find_by(username: "guest").id)
+Bookshelf.create!(name:"Science Fiction", user_id: User.find_by(username: "guest").id)
