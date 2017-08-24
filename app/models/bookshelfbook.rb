@@ -11,4 +11,10 @@
 #
 
 class Bookshelfbook < ApplicationRecord
+  validates :bookshelf_id, :book_id
+  validates :status, inclusion: { in: ['read', 'not read', 'reading'] }
+
+  belongs_to :bookshelf
+
+  has_many :books
 end

@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     requestAllBookshelves: (user) => dispatch(requestAllBookshelves(user)),
     createBookshelf: (bookshelf) => dispatch(createBookshelf(bookshelf)),
-    deleteBookshelf: (bookshelf) => dispatch(deleteBookshelf()),
+    deleteBookshelf: (bookshelf) => dispatch(deleteBookshelf(bookshelf)),
   };
 };
 
