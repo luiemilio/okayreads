@@ -13,5 +13,10 @@ class Bookshelf < ApplicationRecord
   validates :name, :user_id, presence: true
 
   belongs_to :user
+  has_many :bookshelfbooks
+
+  has_many :books,
+    through: :bookshelfbooks,
+    source: :book
 
 end
