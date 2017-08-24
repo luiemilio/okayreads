@@ -16,5 +16,14 @@ class Book < ApplicationRecord
    validates :title, :author, :image_url,
              :publisher, :description, presence: true
 
-    
+  has_many :bookshelfbooks,
+    class_name: "Bookshelfbook",
+    primary_key: :id,
+    foreign_key: :book_id
+
+  has_many :bookshelves,
+    through: :bookshelfbooks,
+    source: :bookshelf
+
+
 end

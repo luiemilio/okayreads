@@ -25,3 +25,9 @@ export const requestSingleBook = (book) => dispatch => (
     dispatch(receiveSingleBook(book))
   ))
 );
+
+export const editBook = (book) => dispatch => (
+  APIUtil.editBook(book).then(book => (
+    dispatch(receiveSingleBook(book))
+  ))
+);

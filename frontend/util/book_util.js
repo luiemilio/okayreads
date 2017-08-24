@@ -11,3 +11,10 @@ export const fetchSingleBook = (book) => {
     url: `/api/books/${book.id}`,
   });
 };
+
+export const editBook = (book) => {
+  return $.ajax ({
+    method: 'PATCH',
+    url: `/api/books/${book.id}`,
+  });
+}

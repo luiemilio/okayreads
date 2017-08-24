@@ -7,7 +7,7 @@ import BookshelvesReducer from './bookshelves_reducer';
 const RootReducer = combineReducers({
   session: SessionReducer,
   books: BooksReducer,
-  bookshelves: BookshelvesReducer
+  bookshelves: BookshelvesReducer,
 });
 
 export default RootReducer;

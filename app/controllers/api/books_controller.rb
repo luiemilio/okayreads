@@ -8,10 +8,15 @@ class Api::BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
-  private
+  def update
+    @book = Book.find(params[:id])
 
+    @book.update(book_params)
+  end
+
+  private
   def book_params
-    params.require[:book].permit(:title, :author, :image_url, :publiser, :description)
+    params.require[:book].permit(:title, :author, :image_url, :publiser, :description, bookshelf_ids: [])
   end
 
 end

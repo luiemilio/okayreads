@@ -5,7 +5,7 @@ class Api::BookshelfbooksController < ApplicationController
     if @bookshelfbook.save
       render json: @bookshelfbook
     else
-      render json: @bookshelfbook.errors.full_messages, status: 422 unless
+      render json: @bookshelfbook.errors.full_messages, status: 422
     end
   end
 
@@ -14,11 +14,12 @@ class Api::BookshelfbooksController < ApplicationController
     if @bookshelfbook.destroy
       render json: @bookshelfbook
     else
-      render json: @bookshelfbook.errors.full_messages, status: 422 unless
+      render json: @bookshelfbook.errors.full_messages, status: 422
     end
   end
 
   private
+
   def bookshelfbook_params
     params.require(:bookshelfbook).permit(:bookshelf_id, :book_id)
   end
