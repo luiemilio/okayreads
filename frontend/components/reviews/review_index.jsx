@@ -1,5 +1,7 @@
 import React from 'react';
 import ReviewIndexItem from './review_index_item';
+import CreateReviewFormContainer from './create_review_form_container';
+import { Link } from 'react-router-dom';
 
 class ReviewIndex extends React.Component {
   constructor(props) {
@@ -23,6 +25,9 @@ class ReviewIndex extends React.Component {
     });
     return (
       <div>
+        <Link to="/reviews/create">
+          <CreateReviewFormContainer />
+        </Link>
         <h2>Reviews</h2>
         { reviews }
       </div>
