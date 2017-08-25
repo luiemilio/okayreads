@@ -33,5 +33,40 @@
 };
 
 .book-show-main-div img {
+  margin-top: 5px;
+  margin-left: 5px;
   width: 150px;
+}
+
+.book-show-bookshelf-div {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+}
+
+.book-show-bookshelf-div span {
+  border-bottom: 1px solid brown;
+  margin-bottom: 5px;
+}
+
+.book-show-bookshelf-div form {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-show-bookshelf-div form label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.book-show-bookshelf-div form input[type="submit"]{
+  background-color: #382110;
+  color: white;
+  border-radius: 7px;
+  box-shadow: none;
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  font-size: 12px;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FontAwesome from 'react-fontawesome';
 
 class BookshelfIndexItem extends React.Component {
   constructor(props){
@@ -18,7 +19,9 @@ class BookshelfIndexItem extends React.Component {
         <Link to={`/bookshelves/${this.props.bookshelf.id}`}>
           {this.props.bookshelf.name}
         </Link>
-          <button onClick={this.handleClick}> X</button>
+          <button onClick={this.handleClick}>
+            <FontAwesome className="fa fa-trash-o" aria-hidden="true" />
+          </button>
       </li>
     );
   }

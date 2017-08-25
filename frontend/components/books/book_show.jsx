@@ -67,11 +67,13 @@ class BookShow extends React.Component {
         <div className="book-show-main-div">
           <div className="book-show-img-div">
             <img src={this.props.book.image_url}/>
-            <span>Add to a bookshelf</span>
-            <form onSubmit={ this.handleSubmit }>
+            <div className="book-show-bookshelf-div">
+              <span>Add to a bookshelf</span>
+              <form onSubmit={ this.handleSubmit }>
                 {bookshelves}
-              <input type="submit" value="Submit"/>
-            </form>
+                <input type="submit" value="Submit"/>
+              </form>
+            </div>
           </div>
           <div className="book-show-description-div">
             <h2>{this.props.book.title}</h2>

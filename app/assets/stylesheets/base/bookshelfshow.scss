@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+
+.bookshelf-show-main-div {
+  display: flex;
+  font-family: 'Merriweather', serif;
+}
+
+.bookshelf-show-main-div img {
+  display: flex;
+  width: 130px;
+  height: 190px;
+  padding: 5px;
+  margin: 5px;
+  border: 2px solid brown;;
+}
+
+.bookshelf-show-main-div li {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}

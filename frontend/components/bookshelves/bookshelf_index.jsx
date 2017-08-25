@@ -1,5 +1,6 @@
 import React from 'react';
 import BookshelfIndexItem from './bookshelf_index_item';
+import FontAwesome from 'react-fontawesome';
 
 class BookshelfIndex extends React.Component {
   constructor(props) {
@@ -35,8 +36,7 @@ class BookshelfIndex extends React.Component {
           <input type="text"
                  onChange={ this.update('name') }
                  value={this.state.name}/>
-          <input type="submit"
-                 value="Add"/>
+          <input type="submit" value="Add"/>
         </form>
         <ul className="bookshelf-index">
           {bookshelves.map(bookshelf => <BookshelfIndexItem key={bookshelf.id} deleteBookshelf = {this.props.deleteBookshelf} bookshelf={bookshelf}/>)}

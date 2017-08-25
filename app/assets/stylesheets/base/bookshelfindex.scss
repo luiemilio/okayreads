@@ -3,9 +3,13 @@
   display: flex;
   flex-direction: column;
   border: 1px solid brown;
+  margin-left: 5px;
+  margin-top: 5px;
+  background-color: #F4F1EA;
 }
 
 .add-shelf-form {
+  margin-top: 5px;
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid brown;
@@ -21,6 +25,7 @@
   text-align: center;
   font-size: 12px;
   margin-bottom: 5px;
+  margin-left: 5px;
 }
 
 .add-shelf-form input[type="text"] {
@@ -36,9 +41,15 @@
 
 .shelves-main-div ul {
   padding-top: 5px;
+  font-size: 13px;
+  margin-left: 5px;
 }
 
 .shelves-main-div li {
   display: flex;
   justify-content: space-between;
+}
+
+.shelves-main-div button {
+  margin-right: 5px;
 }

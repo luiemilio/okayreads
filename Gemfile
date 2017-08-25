@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 # ruby '2.3.3'
-
+gem 'font-awesome-sass'
 gem 'bcrypt'
 gem 'pry-rails'
 gem 'jquery-rails'

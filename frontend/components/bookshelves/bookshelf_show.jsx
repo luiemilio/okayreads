@@ -1,5 +1,6 @@
 import React from 'react';
 import BookshelfShowItem from  './bookshelf_show_item';
+import BookshelfIndexContainer from './bookshelf_index_container';
 
 class BookshelfShow extends React.Component {
   constructor(props) {
@@ -14,7 +15,8 @@ class BookshelfShow extends React.Component {
     if (this.props.bookshelf) {
       const books = this.props.bookshelf.books
       return (
-        <div>
+        <div className="bookshelf-show-main-div">
+          <BookshelfIndexContainer />
           {books.map(book => <BookshelfShowItem key={book.id} book={book}/>)}
         </div>
       );
