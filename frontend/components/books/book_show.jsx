@@ -22,7 +22,10 @@ class BookShow extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault(e);
-    const book = {id: this.props.book.id, bookshelf_ids: this.bookshelfIds};
+    const book = {
+                  id: this.props.book.id,
+                  bookshelf_ids: this.bookshelfIds.concat("")
+                };
     this.props.editBook(book);
 
   }
@@ -67,7 +70,7 @@ class BookShow extends React.Component {
             <span>Add to a bookshelf</span>
             <form onSubmit={ this.handleSubmit }>
                 {bookshelves}
-              <input type="submit" value="add"/>
+              <input type="submit" value="Submit"/>
             </form>
           </div>
           <div className="book-show-description-div">

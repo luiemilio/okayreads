@@ -27,7 +27,7 @@ export const requestSingleBook = (book) => dispatch => (
 );
 
 export const editBook = (book) => dispatch => (
-  APIUtil.editBook(book).then(book => (
-    dispatch(receiveSingleBook(book))
+  APIUtil.editBook(book).then(rbook => (
+    dispatch(receiveSingleBook(rbook))
   ))
 );

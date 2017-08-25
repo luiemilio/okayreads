@@ -16,5 +16,6 @@ export const editBook = (book) => {
   return $.ajax ({
     method: 'PATCH',
     url: `/api/books/${book.id}`,
+    data: { book }
   });
 }

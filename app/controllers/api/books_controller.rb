@@ -5,7 +5,6 @@ class Api::BooksController < ApplicationController
   end
 
   def show
-    debugger
     @book = Book.find(params[:id])
   end
 
@@ -13,11 +12,12 @@ class Api::BooksController < ApplicationController
     @book = Book.find(params[:id])
 
     @book.update(book_params)
+    render :show
   end
 
   private
   def book_params
-    params.require[:book].permit(:title, :author, :image_url, :publiser, :description, bookshelf_ids: [])
+    params.require(:book).permit(:title, :author, :image_url, :publiser, :description, bookshelf_ids: [])
   end
 
 end

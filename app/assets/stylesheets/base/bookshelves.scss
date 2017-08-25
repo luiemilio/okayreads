@@ -1,0 +1,44 @@
+.shelves-main-div {
+  font-family: 'Merriweather', serif;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid brown;
+}
+
+.add-shelf-form {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid brown;
+}
+
+.add-shelf-form input[type=submit] {
+  background-color: #382110;
+  color: white;
+  border-radius: 7px;
+  box-shadow: none;
+  width: 50px;
+  height: 15px;
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.add-shelf-form input[type="text"] {
+  background: #FFFFFF;
+  border-radius: 3px;
+  border: #DCD6CC 1px solid;
+  color: #333333;
+  width: 120px;
+  height: 20px;
+  margin: 5px;
+  font-size: 12px;
+}
+
+.shelves-main-div ul {
+  padding-top: 5px;
+}
+
+.shelves-main-div li {
+  display: flex;
+  justify-content: space-between;
+}
