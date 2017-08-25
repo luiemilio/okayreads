@@ -25,5 +25,6 @@ class Book < ApplicationRecord
     through: :bookshelfbooks,
     source: :bookshelf
 
+  has_many :reviews
 
 end

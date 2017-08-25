@@ -5,7 +5,7 @@
 #  id           :integer          not null, primary key
 #  bookshelf_id :integer          not null
 #  book_id      :integer          not null
-#  status       :string           not null
+#  status       :string           default("not read"), not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
