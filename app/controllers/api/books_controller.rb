@@ -5,6 +5,7 @@ class Api::BooksController < ApplicationController
   end
 
   def show
+    debugger
     @book = Book.find(params[:id])
   end
 

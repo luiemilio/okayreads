@@ -12,7 +12,7 @@ class BookshelfIndex extends React.Component {
     this.props.requestAllBookshelves(this.props.currentUser);
   }
 
-  
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.createBookshelf(this.state).then(() => {
@@ -29,7 +29,7 @@ class BookshelfIndex extends React.Component {
   render() {
     const bookshelves = this.props.bookshelves;
     return (
-      <div>
+      <div className="shelves-main-div">
         <form className="add-shelf-form" onSubmit={ this.handleSubmit }>
           <span>Add a Bookshelf</span>
           <input type="text"

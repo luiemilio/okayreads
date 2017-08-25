@@ -4,31 +4,41 @@ class BookShow extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = this.props.book
+    this.update = this.update.bind(this);
   }
 
   componentDidMount() {
     this.props.requestAllBooks();
     this.props.requestAllBookshelves(this.props.currentUser);
-    // debugger
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.book) {
+      this.bookshelfIds = nextProps.book.bookshelves.map((bookshelf) => {
+        return bookshelf.id
+      });
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault(e);
+    const book = {id: this.props.book.id, bookshelf_ids: this.bookshelfIds};
+    this.props.editBook(book);
 
   }
 
-  update(field) {
-
-    return e => this.setState({
-      [field].push(this.props.bookshelves[e.currentTarget.value])
-    });
+  update(e) {
+    const selectedValue = parseInt(e.currentTarget.value);
+    if (this.bookshelfIds.includes(selectedValue)) {
+      const valueIdx = this.bookshelfIds.indexOf(selectedValue);
+      this.bookshelfIds.splice(valueIdx, 1);
+    } else {
+      this.bookshelfIds.push(selectedValue);
+    }
   }
-
 
   render(){
     if (this.props.book) {
-      debugger
       const ownBookshelfIds = this.props.book.bookshelves.map( (bookshelf) => {
         return bookshelf.id;
       });
@@ -37,13 +47,13 @@ class BookShow extends React.Component {
         if (ownBookshelfIds.includes(bookshelf.id)) {
           return (
             <label key={bookshelf.id}>{bookshelf.name}
-              <input type="checkbox" onClick={ this.update } value={bookshelf.id} checked/>
+              <input type="checkbox" onChange={ this.update } value={bookshelf.id} defaultChecked/>
             </label>
           );
         } else {
           return (
             <label key={bookshelf.id}>{bookshelf.name}
-              <input key={bookshelf.id} onClick={ this.update } type="checkbox" value={bookshelf.id} />
+              <input key={bookshelf.id} onChange={ this.update } type="checkbox" value={bookshelf.id} />
             </label>
 
           );
