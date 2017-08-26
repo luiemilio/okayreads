@@ -1,0 +1,41 @@
+.review-index-main-div {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.review-index-main-div Link {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.review-item {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #382110;
+  border-bottom: 1px solid #382110;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.review-item span {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.review-item span {
+  display: flex;
+  font-size: 12px;
+}
+
+.review-item span > p {
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 3px;
+}
+
+.review-item div {
+  font-size: 12px;
+  font-weight: bolder;
+  font-style: italic;
+}

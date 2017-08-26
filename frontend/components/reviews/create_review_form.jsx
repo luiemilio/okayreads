@@ -29,7 +29,7 @@ class CreateReviewForm extends React.Component {
   render() {
     const errors = this.props.errors;
     const mappedErrors = errors.map((error) => {
-      return (<span>{error}</span>);
+      return (<span key={error}>{error}</span>);
     });
     return (
       <div className="create-review-form-main-div">

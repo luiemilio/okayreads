@@ -6,7 +6,6 @@ import { RECEIVE_ALL_REVIEWS,
          RECEIVE_REVIEW_ERRORS } from '../actions/review_actions';
 
 const nullReviews = {
-  reviews: {},
   errors: []
 };
 
@@ -20,7 +19,7 @@ export const ReviewsReducer = (state = nullReviews, action) => {
       return merge({}, state, {[action.review.id]: action.review});
     case REMOVE_REVIEW:
       const newState = merge({}, state);
-      delete newState[`${action.review.id}`];
+      delete newState[action.review.id];
       return newState;
     case RECEIVE_REVIEW_ERRORS:
       const errors = action.errors;

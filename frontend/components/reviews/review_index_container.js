@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import { deleteReview, requestAllReviews } from '../../actions/review_actions';
 import ReviewIndex from './review_index';
+import { selectAllReviews } from '../../reducers/selectors';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -19,4 +21,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ReviewIndex);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ReviewIndex));

@@ -30,11 +30,10 @@ class ReviewIndex extends React.Component {
     });
     const reviewPath = `/books/${this.props.book.id}/addreview`;
     return (
-      <div>
+      <div className="review-index-main-div">
         <Link to={reviewPath}>
-          Create a review!
+          Review this book!
         </Link>
-        <h2>Reviews</h2>
         { reviews }
       </div>
     );

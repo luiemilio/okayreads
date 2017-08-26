@@ -9,6 +9,7 @@ class BookIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestAllBooks();
+    this.props.requestAllReviews();
   }
 
   render(){
