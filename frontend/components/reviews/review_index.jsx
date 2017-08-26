@@ -8,6 +8,10 @@ class ReviewIndex extends React.Component {
     super(props);
   }
 
+  componentDidMount(){
+    this.props.requestAllReviews();
+  }
+
   render() {
     const reviewers = this.props.reviewers;
     const reviews = this.props.reviews.map((review) => {

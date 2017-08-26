@@ -27,8 +27,15 @@ class CreateReviewForm extends React.Component {
   }
 
   render() {
+    const errors = this.props.errors;
+    const mappedErrors = errors.map((error) => {
+      return (<span>{error}</span>);
+    });
     return (
       <div className="create-review-form-main-div">
+        <div className="create-review-errors">
+          { mappedErrors }
+        </div>
         <form className="create-review-form" onSubmit={this.handleSubmit}>
           <label> My rating:
             <select onChange={this.update('score')} name="score">

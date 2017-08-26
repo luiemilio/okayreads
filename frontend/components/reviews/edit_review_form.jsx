@@ -4,7 +4,8 @@ class EditReviewForm extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = { user_id: this.props.currentUser.id,
+    this.state = { id: this.props.review.id,
+                   user_id: this.props.currentUser.id,
                    book_id: this.props.book.id,
                    title: this.props.review.title,
                    body: this.props.review.body,
@@ -27,17 +28,30 @@ class EditReviewForm extends React.Component {
   }
 
   render() {
+    const errors = this.props.errors;
+    const mappedErrors = errors.map((error) => {
+      return (<span>{error}</span>);
+    });
+
+    const scoreArr = [1,2,3,4,5];
+    const options = scoreArr.map((score) => {
+      if (score === this.props.review.score) {
+        return (<option key={score} defaultValue={score}>{score}</option>);
+      } else {
+        return (<option key={score} value={score}>{score}</option>);
+      }
+    });
+
     return (
-      <div className="create-review-form-main-div">
-        <form className="create-review-form" onSubmit={this.handleSubmit}>
+      <div className="edit-review-form-main-div">
+        <div className="edit-review-errors">
+          { mappedErrors }
+       </div>
+        <form className="edit-review-form" onSubmit={this.handleSubmit}>
           <label> My rating:
-            <select onChange={this.update('score')} name="score">
+            <select onChange={this.update('score')} value={this.state.score}>
               <option></option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="4">5</option>
+              {options}
             </select>
           </label>
           <input type="text"

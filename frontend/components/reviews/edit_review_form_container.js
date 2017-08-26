@@ -12,7 +12,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
     book: state.books[ownProps.match.params.bookId],
-    review: reviewObj[ownProps.match.params.reviewId]
+    review: reviewObj[ownProps.match.params.reviewId],
+    errors: state.reviews.errors,
   };
 };
 

@@ -7,6 +7,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
     book: state.books[ownProps.match.params.bookId],
+    errors: state.reviews.errors,
   };
 };
 

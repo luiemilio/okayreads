@@ -38,8 +38,8 @@ const SessionReducer = (state = nullUser, action) => {
       return revState;
     case REMOVE_REVIEW:
       const remRevState = state;
-      const reviewIdx = remState.currentUser.reviews.indexOf(action.reviews);
-      remState.currentUser.reviews.splice(reviewfIdx, 1);
+      const reviewIdx = remRevState.currentUser.reviews.indexOf(action.reviews);
+      remRevState.currentUser.reviews.splice(reviewIdx, 1);
       return remRevState;
     default:
       return state;

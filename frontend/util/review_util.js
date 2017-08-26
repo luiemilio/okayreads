@@ -20,7 +20,7 @@ export const createReview = (review) => {
   });
 };
 
-export const updateReview = (review) => {
+export const editReview = (review) => {
   return $.ajax ({
     method: 'PATCH',
     url: `api/reviews/${review.id}`,

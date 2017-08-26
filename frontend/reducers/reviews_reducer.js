@@ -2,9 +2,15 @@ import merge from 'lodash/merge';
 
 import { RECEIVE_ALL_REVIEWS,
          RECEIVE_SINGLE_REVIEW,
-         REMOVE_REVIEW } from '../actions/review_actions';
+         REMOVE_REVIEW,
+         RECEIVE_REVIEW_ERRORS } from '../actions/review_actions';
 
-export const ReviewsReducer = (state = {}, action) => {
+const nullReviews = {
+  reviews: {},
+  errors: []
+};
+
+export const ReviewsReducer = (state = nullReviews, action) => {
   Object.freeze(state);
 
   switch(action.type) {
@@ -16,6 +22,9 @@ export const ReviewsReducer = (state = {}, action) => {
       const newState = merge({}, state);
       delete newState[`${action.review.id}`];
       return newState;
+    case RECEIVE_REVIEW_ERRORS:
+      const errors = action.errors;
+      return merge({}, nullReviews, { errors });
     default:
      return state;
   }

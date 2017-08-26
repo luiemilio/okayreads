@@ -2,7 +2,8 @@ import * as APIUtil from '../util/review_util';
 
 export const RECEIVE_ALL_REVIEWS = 'RECEIVE_ALL_REVIEWS';
 export const RECEIVE_SINGLE_REVIEW = 'RECEIVE_SINGLE_REVIEW';
-export const REMOVE_REVIEW  ='REMOVE_REVIEW';
+export const REMOVE_REVIEW  = 'REMOVE_REVIEW';
+export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 
 export const receiveAllReviews = reviews => ({
   type: RECEIVE_ALL_REVIEWS,
@@ -17,6 +18,11 @@ export const receiveSingleReview = review => ({
 export const removeReview = review => ({
   type: REMOVE_REVIEW,
   review
+});
+
+export const receiveReviewErrors = (errors) => ({
+  type: RECEIVE_REVIEW_ERRORS,
+  errors
 });
 
 export const requestAllReviews = () => (dispatch) => (
@@ -35,12 +41,17 @@ export const requestSingleReview = (review) => (dispatch) => (
 export const createReview = (review) => (dispatch) => (
   APIUtil.createReview(review).then(review => (
     dispatch(receiveSingleReview(review))
+  ), err => (
+    dispatch(receiveReviewErrors(err.responseJSON))
   ))
 );
+
 
 export const editReview = (review) => (dispatch) => (
   APIUtil.editReview(review).then(review => (
     dispatch(receiveSingleReview(review))
+  ), err => (
+      dispatch(receiveReviewErrors(err.responseJSON))
   ))
 );
 

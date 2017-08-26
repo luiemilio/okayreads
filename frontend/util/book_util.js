@@ -18,4 +18,4 @@ export const editBook = (book) => {
     url: `/api/books/${book.id}`,
     data: { book }
   });
-}
+};
