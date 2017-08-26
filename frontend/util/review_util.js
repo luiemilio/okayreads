@@ -14,7 +14,7 @@ export const fetchSingleReview = (review) => {
 
 export const createReview = (review) => {
   return $.ajax ({
-    method: 'PUT',
+    method: 'POST',
     url: 'api/reviews/',
     data: { review },
   });

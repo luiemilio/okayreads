@@ -11,7 +11,7 @@ export const ReviewsReducer = (state = {}, action) => {
     case RECEIVE_ALL_REVIEWS:
       return merge({}, state, action.reviews);
     case RECEIVE_SINGLE_REVIEW:
-      return merge({}, state, {[action.review.id]: review});
+      return merge({}, state, {[action.review.id]: action.review});
     case REMOVE_REVIEW:
       const newState = merge({}, state);
       delete newState[`${action.review.id}`];

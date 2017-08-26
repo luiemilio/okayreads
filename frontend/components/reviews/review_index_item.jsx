@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ReviewIndexItem extends React.Component {
   constructor(props) {
@@ -7,8 +8,12 @@ class ReviewIndexItem extends React.Component {
 
   render() {
     let buttons;
+    const editPath = `/books/${this.props.book.id}/${this.props.review.id}/editreview`;
     if (this.props.currentUser.id === this.props.reviewer.id) {
-      buttons = <div>edit and delete buttons</div>;
+      buttons = <div>
+                <Link to={editPath} id="hello">Edit</Link>
+                <button>Delete</button>
+                </div>;
     }
     return (
       <div>

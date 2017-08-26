@@ -85,7 +85,8 @@ class BookShow extends React.Component {
             </div>
             <ReviewIndexContainer
               reviews={ this.props.book.reviews }
-              reviewers={ this.props.book.reviewers }/>
+              reviewers={ this.props.book.reviewers }
+              book={ this.props.book }/>
           </div>
         </div>
       );

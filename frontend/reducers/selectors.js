@@ -5,5 +5,5 @@ export const selectAllBooks = (state) => {
 };
 
 export const selectBookshelves= (state) => {
-  return values(state.bookshelves);
+  return values(state.session.currentUser.bookshelves);
 };

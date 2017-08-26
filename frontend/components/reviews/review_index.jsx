@@ -19,14 +19,16 @@ class ReviewIndex extends React.Component {
             currentUser={this.props.currentUser}
             deleteReview={this.props.deleteReview}
             editReview={this.props.editReview}
-            reviewer={reviewers[i]}/>);
+            reviewer={reviewers[i]}
+            book={this.props.book}/>);
         }
       }
     });
+    const reviewPath = `/books/${this.props.book.id}/addreview`;
     return (
       <div>
-        <Link to="/reviews/create">
-          <CreateReviewFormContainer />
+        <Link to={reviewPath}>
+          Create a review!
         </Link>
         <h2>Reviews</h2>
         { reviews }

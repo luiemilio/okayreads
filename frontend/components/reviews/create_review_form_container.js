@@ -1,9 +1,13 @@
 import { connect } from 'react-redux';
 import { createReview } from '../../actions/review_actions';
-import CreateReviewForm from './review_index';
+import { withRouter } from 'react-router-dom';
+import CreateReviewForm from './create_review_form';
 
 const mapStateToProps = (state, ownProps) => {
-  return {};
+  return {
+    currentUser: state.session.currentUser,
+    book: state.books[ownProps.match.params.bookId],
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -12,4 +16,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateReviewForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CreateReviewForm));

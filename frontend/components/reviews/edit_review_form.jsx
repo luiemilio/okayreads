@@ -1,14 +1,14 @@
 import React from 'react';
 
-class CreateReviewForm extends React.Component {
+class EditReviewForm extends React.Component {
   constructor(props){
     super(props);
 
     this.state = { user_id: this.props.currentUser.id,
                    book_id: this.props.book.id,
-                   title: '',
-                   body: '',
-                   score: '' };
+                   title: this.props.review.title,
+                   body: this.props.review.body,
+                   score: this.props.review.score };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -21,7 +21,7 @@ class CreateReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createReview(this.state).then(() => {
+    this.props.editReview(this.state).then(() => {
       this.props.history.push(`/books/${this.props.book.id}`);
     });
   }
@@ -55,4 +55,4 @@ class CreateReviewForm extends React.Component {
   }
 }
 
-export default CreateReviewForm;
+export default EditReviewForm;

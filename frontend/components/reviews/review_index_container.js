@@ -7,6 +7,7 @@ const mapStateToProps = (state, ownProps) => {
     reviews: ownProps.reviews,
     reviewers: ownProps.reviewers,
     currentUser: state.session.currentUser,
+    book: ownProps.book,
   };
 };
 
