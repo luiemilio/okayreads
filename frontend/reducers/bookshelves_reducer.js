@@ -9,7 +9,7 @@ export const BookshelvesReducer = (state = {}, action) => {
 
   switch(action.type) {
     case RECEIVE_ALL_BOOKSHELVES:
-      return merge({}, state, action.bookshelves);
+      return merge({}, action.bookshelves);
     case RECEIVE_SINGLE_BOOKSHELF:
       return merge({}, state, {[action.bookshelf.id]: action.bookshelf});
     case REMOVE_BOOKSHELF:

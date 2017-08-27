@@ -15,6 +15,7 @@ class BookShow extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    this.props.requestAllBookshelves(this.props.currentUser);
     if (nextProps.book) {
       this.bookshelfIds = nextProps.book.bookshelves.map((bookshelf) => {
         return bookshelf.id;
