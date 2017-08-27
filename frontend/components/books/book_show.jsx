@@ -1,4 +1,5 @@
 import React from 'react';
+import ReviewIndexContainer from '../reviews/review_index_container';
 
 class BookShow extends React.Component {
   constructor(props) {
@@ -9,13 +10,14 @@ class BookShow extends React.Component {
 
   componentDidMount() {
     this.props.requestAllBooks();
+    this.props.requestAllReviews();
     this.props.requestAllBookshelves(this.props.currentUser);
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.book) {
       this.bookshelfIds = nextProps.book.bookshelves.map((bookshelf) => {
-        return bookshelf.id
+        return bookshelf.id;
       });
     }
   }
@@ -81,6 +83,7 @@ class BookShow extends React.Component {
             <span>Publisher: {this.props.book.publisher}</span>
             <p>{this.props.book.description}</p>
           </div>
+          <ReviewIndexContainer book={this.props.book}/>
         </div>
       );
     } else {
