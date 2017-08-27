@@ -6,12 +6,11 @@ import { requestAllReviews, requestSingleReview,
 import { selectCurrentUserReviewIds,
          selectCurrentBookReviewIds, selectAllReviews } from '../../reducers/selectors';
 
-import ReviewIndex from './review_index';
+import ReviewIndexItem from './review_index_item';
 
 const mapStateToProps = (state, ownProps) => {
  return {
-   reviews: selectAllReviews(state),
-   bookReviewIds: selectCurrentBookReviewIds(state, ownProps.book.id),
+   review: ownProps.review,
    currentUserReviewIds: selectCurrentUserReviewIds(state),
  };
 };
@@ -20,10 +19,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     requestAllReviews: () => requestAllReviews(),
     requestSingleReview: (review) => requestSingleReview(review),
-    createReview: (review) => createReview(review),
-    editReview: (review) => editReview(review),
     deleteReview: (review) => deleteReview(review),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ReviewIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(ReviewIndexItem);

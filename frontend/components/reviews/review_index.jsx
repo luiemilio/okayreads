@@ -1,4 +1,7 @@
 import React from 'react';
+import ReviewIndexItemContainer from './review_index_item_container';
+import CreateReviewFormContainer from './create_review_form_container';
+import { Link } from 'react-router-dom';
 
 class ReviewIndex extends React.Component {
   constructor(props) {
@@ -6,9 +9,18 @@ class ReviewIndex extends React.Component {
   }
 
   render(){
-    debugger
+    const reviews = this.props.reviews.map((review) => {
+      if (this.props.bookReviewIds.includes(review.id)) {
+        return (
+          <ReviewIndexItemContainer key={review.id} review={review}/>
+        );
+      }
+    });
     return (
-      <div>REVIEWS GO HERE</div>
+      <div>
+        <CreateReviewFormContainer />
+        {reviews}
+      </div>
     );
   }
 }

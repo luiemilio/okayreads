@@ -8,11 +8,19 @@ export const selectBookshelves= (state) => {
   return values(state.bookshelves);
 };
 
+export const selectAllReviews = (state) => {
+  return values(state.reviews);
+};
+
 export const selectCurrentUserReviewIds = (state) => {
-  const reviewIds = state.session.currentUser.reviews.map((review) => {
-    return review.id;
+  const reviewArr = values(state.reviews);
+  const currentUserReviewIds = [];
+  reviewArr.forEach((review) => {
+    if (review.user_id === state.session.currentUser.id) {
+      currentUserReviewIds.push(review.user_id);
+    }
   });
-  return reviewIds;
+  return currentUserReviewIds;
 };
 
 export const selectCurrentBookReviewIds = (state, bookId) => {
