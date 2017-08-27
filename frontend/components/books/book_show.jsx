@@ -15,7 +15,6 @@ class BookShow extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.props.requestAllBookshelves(this.props.currentUser);
     if (nextProps.book) {
       this.bookshelfIds = nextProps.book.bookshelves.map((bookshelf) => {
         return bookshelf.id;
@@ -83,8 +82,8 @@ class BookShow extends React.Component {
             <span>by: {this.props.book.author}</span>
             <span>Publisher: {this.props.book.publisher}</span>
             <p>{this.props.book.description}</p>
+            <ReviewIndexContainer book={this.props.book}/>
           </div>
-          <ReviewIndexContainer book={this.props.book}/>
         </div>
       );
     } else {

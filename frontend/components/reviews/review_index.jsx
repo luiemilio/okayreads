@@ -21,7 +21,9 @@ class ReviewIndex extends React.Component {
 
     return (
       <div className="review-index-main-div">
-        <Link to={path}>Add Review</Link>
+        <div className="review-index-main-div-link">
+          <Link to={path}>Add Review</Link>
+        </div>
         {reviews}
       </div>
     );
