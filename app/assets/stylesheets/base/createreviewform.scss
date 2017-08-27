@@ -1,0 +1,49 @@
+.review-main-div {
+  font-family: 'Merriweather', serif;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+}
+
+.review-main-div form {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-form-title {
+  font-size: 20px;
+  color: #00635d;
+}
+
+.review-rating-label {
+  margin-top: 5px;
+}
+
+.review-main-div input[type="text"] {
+  border: 1px;
+  font-size: 16px;
+  border: #DCD6CC 1px solid;
+  width: 300px;
+  margin-top: 5px;
+}
+
+.review-main-div textarea {
+  border: 1px;
+  font-size: 14px;
+  border: #DCD6CC 1px solid;
+  width: 700px;
+  margin-top: 5px;
+}
+
+.review-main-div input[type="submit"] {
+  border-top: 1px solid brown;
+  margin-top: 10px;
+  font-size: 14px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  background-color: #382110;
+  color: white;
+  width: 70px;
+  border-radius: 3px;
+  text-align: center;
+}

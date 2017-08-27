@@ -20,6 +20,10 @@ class EditReviewForm extends React.Component {
     });
   }
 
+  componentDidMount() {
+    this.props.requestAllReviews();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.editReview(this.state).then(() => {
@@ -28,32 +32,37 @@ class EditReviewForm extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        <h1>EDIT REVIEW!</h1>
-        <form onSubmit={this.handleSubmit}>
-          <label> My rating:
-            <select onChange={this.update('score')} name="score" defaultValue={this.props.review.score}>
-              <option></option>
+    if (this.props.review) {
+      return (
+        <div className="review-main-div">
+          <h1 className="review-form-title">{this.props.review.book.title}</h1>
+          <form onSubmit={this.handleSubmit}>
+            <label className="review-rating-label"> My rating:
+              <select onChange={this.update('score')} name="score" defaultValue={this.props.review.score}>
+                <option></option>
                 <option></option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="4">5</option>
-            </select>
-          </label>
-          <input onChange={this.update('title')}
-            value={this.state.title}
-            type="text"
-            placeholder="Subject"/>
-          <textarea onChange={this.update('body')}
-            value={this.state.body}
-            placeholder="Review"/>
-          <input type="submit"></input>
-        </form>
-      </div>
-    );
+              </select>
+            </label>
+            <input onChange={this.update('title')}
+              value={this.state.title}
+              type="text"
+              placeholder="Subject"/>
+            <textarea onChange={this.update('body')}
+              value={this.state.body}
+              placeholder="Review"
+              rows="8" cols="80"/>
+            <input type="submit"></input>
+          </form>
+        </div>
+      );
+    } else {
+      return null;
+    }
   }
 }
 

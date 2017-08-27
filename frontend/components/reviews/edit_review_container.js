@@ -19,6 +19,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     editReview: (review) => dispatch(editReview(review)),
+    requestAllReviews: () => dispatch(requestAllReviews()),
   };
 };
 
