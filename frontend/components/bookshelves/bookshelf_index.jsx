@@ -39,7 +39,7 @@ class BookshelfIndex extends React.Component {
           <input type="submit" value="Add"/>
         </form>
         <ul className="bookshelf-index">
-          {bookshelves.map(bookshelf => <BookshelfIndexItem key={bookshelf.id} deleteBookshelf = {this.props.deleteBookshelf} bookshelf={bookshelf}/>)}
+          {bookshelves.map(bookshelf => <BookshelfIndexItem key={bookshelf.id} deleteBookshelf = {this.props.deleteBookshelf} bookshelf={bookshelf} requestAllBookshelves={this.props.requestAllBookshelves} currentUser={this.props.currentUser}/>)}
         </ul>
       </div>
     );

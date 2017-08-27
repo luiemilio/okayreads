@@ -4,6 +4,13 @@ import { Link } from 'react-router-dom';
 class ReviewIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    e.preventDefault(e);
+    debugger
+    this.props.deleteReview(this.props.review);
   }
 
   render() {
@@ -12,6 +19,7 @@ class ReviewIndexItem extends React.Component {
     if (this.props.currentUser.id === this.props.reviewer.id) {
       buttons = <div>
                 <Link to={editPath}>Edit</Link>
+                <button onClick={this.handleClick}>Delete</button>
                 </div>;
     }
     return (
