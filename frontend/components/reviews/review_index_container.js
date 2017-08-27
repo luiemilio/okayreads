@@ -10,6 +10,7 @@ import ReviewIndex from './review_index';
 
 const mapStateToProps = (state, ownProps) => {
  return {
+   book: ownProps.book,
    reviews: selectAllReviews(state),
    bookReviewIds: selectCurrentBookReviewIds(state, ownProps.book.id),
    currentUserReviewIds: selectCurrentUserReviewIds(state),

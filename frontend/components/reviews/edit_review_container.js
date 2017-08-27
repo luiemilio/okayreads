@@ -6,21 +6,20 @@ import { requestAllReviews, requestSingleReview,
 import { selectCurrentUserReviewIds,
          selectCurrentBookReviewIds, selectAllReviews } from '../../reducers/selectors';
 
-import CreateReviewForm from './create_review_form';
+import EditReviewForm from './edit_review_form';
 
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-   currentUser: state.session.currentUser,
-   bookId: parseInt(ownProps.match.params.bookId),
+   review: state.reviews[ownProps.match.params.reviewId],
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createReview: (review) => dispatch(createReview(review)),
+    editReview: (review) => dispatch(editReview(review)),
   };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CreateReviewForm));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(EditReviewForm));

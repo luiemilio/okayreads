@@ -1,14 +1,15 @@
 import React from 'react';
 
-class CreateReviewForm extends React.Component {
+class EditReviewForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      book_id: this.props.bookId,
-      user_id: this.props.currentUser.id,
-      score: '',
-      title: '',
-      body: '',
+      id: this.props.review.id,
+      book_id: this.props.review.book_id,
+      user_id: this.props.review.user_id,
+      score: this.props.review.score,
+      title: this.props.review.title,
+      body: this.props.review.body,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -21,24 +22,25 @@ class CreateReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createReview(this.state).then(() => {
-      this.props.history.push(`/books/${this.props.bookId}`);
+    this.props.editReview(this.state).then(() => {
+      this.props.history.push(`/books/${this.props.review.book_id}`);
     });
   }
 
   render() {
     return (
       <div>
-        <h1>ADD REVIEW!</h1>
+        <h1>EDIT REVIEW!</h1>
         <form onSubmit={this.handleSubmit}>
           <label> My rating:
-            <select onChange={this.update('score')} name="score">
+            <select onChange={this.update('score')} name="score" defaultValue={this.props.review.score}>
               <option></option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="4">5</option>
+                <option></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="4">5</option>
             </select>
           </label>
           <input onChange={this.update('title')}
@@ -55,4 +57,4 @@ class CreateReviewForm extends React.Component {
   }
 }
 
-export default CreateReviewForm;
+export default EditReviewForm;
