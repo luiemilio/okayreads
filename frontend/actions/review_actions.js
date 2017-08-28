@@ -1,4 +1,5 @@
 import * as APIUtil from '../util/review_util';
+import { receiveActionErrors } from './error_actions';
 
 export const RECEIVE_ALL_REVIEWS = 'RECEIVE_ALL_REVIEWS';
 export const RECEIVE_SINGLE_REVIEW = 'RECEIVE_SINGLE_REVIEW';
@@ -35,13 +36,16 @@ export const requestSingleReview = (review) => (dispatch) => (
 export const createReview = (review) => (dispatch) => (
   APIUtil.createReview(review).then(review => (
     dispatch(receiveSingleReview(review))
+  ), err => (
+    dispatch(receiveActionErrors(err.responseJSON, "createReview"))
   ))
 );
-
 
 export const editReview = (review) => (dispatch) => (
   APIUtil.editReview(review).then(review => (
     dispatch(receiveSingleReview(review))
+  ), err => (
+    dispatch(receiveActionErrors(err.responseJSON, "editReview"))
   ))
 );
 

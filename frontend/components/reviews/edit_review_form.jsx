@@ -25,15 +25,25 @@ class EditReviewForm extends React.Component {
     this.props.requestAllReviews();
   }
 
+  componentWillUnmount(){
+    this.props.removeErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.editReview(this.state).then(() => {
       this.props.history.push(`/books/${this.props.review.book_id}`);
+    }).then(() => {
+      this.props.removeErrors();
     });
   }
 
   render() {
     if (this.props.review) {
+      let errorMsg;
+      if (this.props.errors) {
+        errorMsg = "Please fill out all fields";
+      }
       const bookPath = `/books/${this.props.review.book_id}`;
       return (
         <div className="review-main-div">
@@ -62,6 +72,9 @@ class EditReviewForm extends React.Component {
               rows="8" cols="80"/>
             <input type="submit"></input>
           </form>
+          <div>
+            <span>{errorMsg}</span>
+          </div>
         </div>
       );
     } else {

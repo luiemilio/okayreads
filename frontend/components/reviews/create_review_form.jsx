@@ -24,16 +24,28 @@ class CreateReviewForm extends React.Component {
     this.props.requestAllBooks();
   }
 
+  componentWillUnmount(){
+    this.props.removeErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.createReview(this.state).then(() => {
       this.props.history.push(`/books/${this.props.bookId}`);
+    }).then( () => {
+      this.props.removeErrors();
     });
   }
 
+
+
   render() {
-    const bookPath = `/books/${this.props.book.id}`
     if (this.props.book) {
+      let errorMsg;
+      if (this.props.errors) {
+        errorMsg = "Please fill out all fields";
+      }
+      const bookPath = `/books/${this.props.book.id}`;
       return (
         <div className="review-main-div">
           <Link to={bookPath}>
@@ -60,6 +72,9 @@ class CreateReviewForm extends React.Component {
               rows="8" cols="80"/>
             <input type="submit"></input>
           </form>
+          <div>
+            <span>{errorMsg}</span>
+          </div>
         </div>
       );
     } else {

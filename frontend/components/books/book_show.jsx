@@ -6,7 +6,6 @@ class BookShow extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
-    this.message = '';
   }
 
   componentDidMount() {
@@ -73,9 +72,8 @@ class BookShow extends React.Component {
               <span>Add to a bookshelf</span>
               <form onSubmit={ this.handleSubmit }>
                 {bookshelves}
-                <input type="submit" value="Submit"/>
+                <input type="submit" value="Update"/>
               </form>
-              <h3>{this.message}</h3>
             </div>
           </div>
           <div className="book-show-description-div">

@@ -1,4 +1,5 @@
 import * as APIUtil from '../util/bookshelf_util';
+import { receiveActionErrors } from './error_actions';
 
 export const RECEIVE_ALL_BOOKSHELVES = 'RECEIVE_ALL_BOOKSHELVES';
 export const RECEIVE_SINGLE_BOOKSHELF = 'RECEIVE_SINGLE_BOOKSHELF';
@@ -35,6 +36,8 @@ export const requestSingleBookshelf = (bookshelf) => (dispatch) => (
 export const createBookshelf = (bookshelf) => (dispatch) => (
   APIUtil.createBookshelf(bookshelf).then(bookshelf => (
     dispatch(receiveSingleBookshelf(bookshelf))
+  ), err => (
+    dispatch(receiveActionErrors(err.responseJSON, "createBookshelf"))
   ))
 );
 

@@ -5,6 +5,8 @@ import { requestAllReviews, requestSingleReview,
 
 import { requestAllBooks } from '../../actions/book_actions';
 
+import { removeErrors } from '../../actions/error_actions';
+
 import { selectCurrentUserReviewIds,
          selectCurrentBookReviewIds, selectAllReviews } from '../../reducers/selectors';
 
@@ -16,6 +18,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
    review: state.reviews[ownProps.match.params.reviewId],
    book: state.books[state.reviews[ownProps.match.params.reviewId].book_id],
+   errors: state.errors.editReview,
   };
 };
 
@@ -24,6 +27,7 @@ const mapDispatchToProps = (dispatch) => {
     editReview: (review) => dispatch(editReview(review)),
     requestAllReviews: () => dispatch(requestAllReviews()),
     requestAllBooks: () => dispatch(requestAllBooks()),
+    removeErrors: () => dispatch(removeErrors()),
   };
 };
 
