@@ -6,6 +6,7 @@ class BookShow extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.message = '';
   }
 
   componentDidMount() {
@@ -28,7 +29,9 @@ class BookShow extends React.Component {
                   id: this.props.book.id,
                   bookshelf_ids: this.bookshelfIds.concat("")
                 };
-    this.props.editBook(book);
+    this.props.editBook(book).then(() => {
+      this.message = "Test";
+    });
 
   }
 
@@ -75,6 +78,7 @@ class BookShow extends React.Component {
                 {bookshelves}
                 <input type="submit" value="Submit"/>
               </form>
+              <h3>{this.message}</h3>
             </div>
           </div>
           <div className="book-show-description-div">

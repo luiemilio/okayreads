@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class EditReviewForm extends React.Component {
   constructor(props) {
@@ -33,9 +34,12 @@ class EditReviewForm extends React.Component {
 
   render() {
     if (this.props.review) {
+      const bookPath = `/books/${this.props.review.book_id}`;
       return (
         <div className="review-main-div">
-          <h1 className="review-form-title">{this.props.review.book.title}</h1>
+          <Link to={bookPath}>
+            <h1 className="review-form-title">{this.props.review.book.title}</h1>
+          </Link>
           <form onSubmit={this.handleSubmit}>
             <label className="review-rating-label"> My rating:
               <select onChange={this.update('score')} name="score" defaultValue={this.props.review.score}>
