@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170825175918) do
+ActiveRecord::Schema.define(version: 20170828194201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "book_read_statuses", force: :cascade do |t|
+    t.integer "book_id", null: false
+    t.integer "user_id", null: false
+    t.string "status", default: "not read", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "books", force: :cascade do |t|
     t.string "title", null: false
@@ -30,7 +38,6 @@ ActiveRecord::Schema.define(version: 20170825175918) do
   create_table "bookshelfbooks", force: :cascade do |t|
     t.integer "bookshelf_id", null: false
     t.integer "book_id", null: false
-    t.string "status", default: "not read", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_bookshelfbooks_on_book_id"
