@@ -29,10 +29,7 @@ class BookShow extends React.Component {
                   id: this.props.book.id,
                   bookshelf_ids: this.bookshelfIds.concat("")
                 };
-    this.props.editBook(book).then(() => {
-      this.message = "Test";
-    });
-
+    this.props.editBook(book);
   }
 
   update(e) {
