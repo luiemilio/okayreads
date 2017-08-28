@@ -30,12 +30,19 @@ class SignUp extends React.Component {
   }
 
   render() {
+    let errorMsgs;
+    if (this.props.errors){
+      errorMsgs = this.props.errors.map((error, idx) => {
+        return (
+          <h3 key={idx}>{error}</h3>
+        );
+      });
+    }
     return (
       <div className="homepage-signup-main-div">
         <div className="homepage-signup-form-div">
           <h3>Sign Up!</h3>
           <form className="homepage-signup-form" onSubmit={ this.handleSubmit }>
-            <h2>{this.props.errors}</h2>
             <input
               type="text"
               value={ this.state.username }
@@ -48,6 +55,9 @@ class SignUp extends React.Component {
               placeholder="Password"/>
             <input type="submit" name="" value="Submit"/>
           </form>
+        </div>
+        <div className="signup-errors">
+          {errorMsgs}
         </div>
       </div>
     );
