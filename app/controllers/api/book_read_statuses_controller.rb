@@ -13,7 +13,7 @@ class Api::BookReadStatusesController < ApplicationController
     if @book_read_status.save
       render :show
     else
-      @book_read_status.errors.full_messages, status: 422
+      render json: @book_read_status.errors.full_messages, status: 422
     end
   end
 
@@ -25,6 +25,6 @@ class Api::BookReadStatusesController < ApplicationController
 
   private
   def book_read_status_params
-    params.require(:book_read_status).only(:book_id, :user_id, :status)
+    params.require(:book_read_status).permit(:book_id, :user_id, :status)
   end
 end

@@ -14,12 +14,19 @@ class User < ApplicationRecord
   validates :username, :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token
+  after_create :create_status_record
 
   attr_reader :password
 
-  has_many :bookshelves
-  has_many :reviews
-  has_many :book_read_statuses
+  has_many :bookshelves, dependent: :destroy
+  has_many :reviews, dependent: :destroy
+  has_many :book_read_statuses, dependent: :destroy
+
+  def create_status_record
+    Book.all.ids.each do |id|
+      BookReadStatus.create!(user_id: self.id, book_id: id)
+    end
+  end
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

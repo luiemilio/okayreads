@@ -1,13 +1,3 @@
-User.destroy_all
-
-User.create!([
-  {username: "guest", password: "password"},
-  {username: "luis", password: "password"}
-  ])
-
-user_id = User.first.id
-user_id2 = User.second.id
-
 Book.destroy_all
 
 Book.create!([
@@ -25,6 +15,17 @@ Book.create!([
 
 book_id = Book.first.id
 
+User.destroy_all
+
+User.create!([
+  {username: "guest", password: "password"},
+  {username: "luis", password: "password"}
+  ])
+
+user_id = User.first.id
+user_id2 = User.second.id
+
+
 Bookshelf.destroy_all
 
 Bookshelf.create!([
@@ -39,7 +40,7 @@ bookshelf_id = Bookshelf.first.id
 Bookshelfbook.destroy_all
 
 Bookshelfbook.create!([
-  {bookshelf_id: bookshelf_id, book_id: book_id, status: "not read"},
+  {bookshelf_id: bookshelf_id, book_id: book_id},
 ])
 
 Review.destroy_all

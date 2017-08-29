@@ -29,3 +29,7 @@ export const selectCurrentBookReviewIds = (state, bookId) => {
   });
   return reviewIds;
 };
+
+export const selectBookStatuses = (state) => {
+  return values(state.bookStatuses);
+};

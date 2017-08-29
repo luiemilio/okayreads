@@ -11,9 +11,9 @@
 #
 
 class BookReadStatus < ApplicationRecord
-  validates :book_id, :user_id, :status
-  validates inclusion: { in: ['not read', 'read', 'reading'] }
-
+  validates :book_id, :user_id, :status, presence: true
+  validates :status, inclusion: { in: ['unread', 'read', 'reading'] }
+  validates :user, uniqueness: { scope: :book }
   belongs_to :book
   belongs_to :user
 end

@@ -53,8 +53,6 @@ class EditReviewForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <label className="review-rating-label"> My rating:
               <select onChange={this.update('score')} name="score" defaultValue={this.props.review.score}>
-                <option></option>
-                <option></option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

@@ -6,12 +6,14 @@ class BookShow extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
     this.props.requestAllBooks();
     this.props.requestAllReviews();
     this.props.requestAllBookshelves(this.props.currentUser);
+    this.props.requestAllBookStatuses(this.props.currentUser);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -41,8 +43,38 @@ class BookShow extends React.Component {
     }
   }
 
+  handleChange(e) {
+    const selectedValue = e.currentTarget.value;
+    this.props.updateBookStatus({ id: this.currentStatusId,
+                                  user_id: this.props.currentUser.id,
+                                  book_id: this.props.book.id,
+                                  status: selectedValue });
+  }
+
+
   render(){
     if (this.props.book) {
+
+      let currentStatus;
+      let currentStatusId;
+
+      const allStatusIds = this.props.book.book_read_statuses.map((status) => {
+        return status.id;
+      });
+
+      const ownStatusIds = Object.keys(this.props.bookStatusesObj);
+
+      ownStatusIds.forEach((ownStatusId) => {
+        if (allStatusIds.includes(parseInt(ownStatusId))) {
+          currentStatus = this.props.bookStatusesObj[ownStatusId];
+          currentStatusId = ownStatusId;
+        }
+      });
+      debugger
+      
+      this.currentStatus = currentStatus;
+      this.currentStatusId = currentStatusId;
+
       const ownBookshelfIds = this.props.book.bookshelves.map( (bookshelf) => {
         return bookshelf.id;
       });
@@ -65,6 +97,7 @@ class BookShow extends React.Component {
       });
 
       return (
+
         <div className="book-show-main-div">
           <div className="book-show-img-div">
             <img src={this.props.book.image_url}/>
@@ -80,6 +113,15 @@ class BookShow extends React.Component {
             <h2>{this.props.book.title}</h2>
             <span>by: {this.props.book.author}</span>
             <span>Publisher: {this.props.book.publisher}</span>
+            <div>
+              <label className="book-show-status-label"> Status:
+                <select onChange={this.handleChange} name="status" defaultValue={currentStatus.status}>
+                  <option value="unread">Unread</option>
+                  <option value="read">Read</option>
+                  <option value="reading">Reading</option>
+                </select>
+              </label>
+            </div>
             <p>{this.props.book.description}</p>
             <ReviewIndexContainer book={this.props.book}/>
           </div>
