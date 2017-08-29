@@ -22,7 +22,6 @@ export const createStatus = (book_read_status) => {
 };
 
 export const updateStatus = (book_read_status) => {
-  debugger
   return $.ajax ({
     method: 'PATCH',
     url: `/api/book_read_statuses/${book_read_status.id}`,

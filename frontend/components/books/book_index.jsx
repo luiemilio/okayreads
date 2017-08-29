@@ -1,6 +1,7 @@
 import React from 'react';
 import BookIndexItem from './book_index_item';
 import BookshelfIndexContainer from '../bookshelves/bookshelf_index_container';
+import StatusesIndex from '../statuses/statuses_index';
 
 class BookIndex extends React.Component {
   constructor(props) {
@@ -16,7 +17,10 @@ class BookIndex extends React.Component {
     const books = this.props.books;
     return (
       <div className="book-index-main-div">
-        <BookshelfIndexContainer />
+        <div className="book-index-side-bar">
+          <StatusesIndex />
+          <BookshelfIndexContainer />
+        </div>
         <ul className="book-index">
           {books.map(book => <BookIndexItem key={book.id} book={book}/>)}
         </ul>

@@ -33,3 +33,14 @@ export const selectCurrentBookReviewIds = (state, bookId) => {
 export const selectBookStatuses = (state) => {
   return values(state.bookStatuses);
 };
+
+export const getBooksfromStatus = (state, statusType) => {
+  const bookIds = [];
+  const statuses = state.bookStatuses;
+  for(let key in statuses) {
+    if (statuses[key].status === statusType) {
+      bookIds.push(statuses[key].book_id);
+    }
+  }
+  return bookIds;
+};

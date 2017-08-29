@@ -70,8 +70,7 @@ class BookShow extends React.Component {
           currentStatusId = ownStatusId;
         }
       });
-      debugger
-      
+
       this.currentStatus = currentStatus;
       this.currentStatusId = currentStatusId;
 

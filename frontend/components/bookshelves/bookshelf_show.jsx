@@ -13,7 +13,7 @@ class BookshelfShow extends React.Component {
 
   render() {
     if (this.props.bookshelf) {
-      const books = this.props.bookshelf.books
+      const books = this.props.bookshelf.books;
       return (
         <div className="bookshelf-show-main-div">
           <BookshelfIndexContainer />

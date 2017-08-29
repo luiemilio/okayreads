@@ -10,7 +10,6 @@ export const BookStatusesReducer = (state = {}, action) => {
     case RECEIVE_ALL_BOOK_STATUSES:
       return action.bookStatuses;
     case RECEIVE_SINGLE_BOOK_STATUS:
-    debugger
       return merge({}, status, {[action.bookStatus.id]: action.bookStatus});
     default:
       return state;
