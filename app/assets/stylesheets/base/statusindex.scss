@@ -14,3 +14,24 @@
   margin-left: 5px;
   margin-bottom: 5px;
 }
+
+.status-show-main-div {
+  display: flex;
+  font-family: 'Merriweather', serif;
+  flex-wrap: wrap
+}
+
+.status-show-main-div img {
+  display: flex;
+  width: 130px;
+  height: 190px;
+  padding: 5px;
+  margin: 5px;
+  border: 2px solid brown;
+}
+
+.status-show-main-div li {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}

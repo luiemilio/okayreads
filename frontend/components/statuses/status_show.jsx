@@ -29,8 +29,10 @@ class StatusShow extends React.Component {
 
       return (
         <div className="status-show-main-div">
-          <StatusesIndex />
-          <BookshelfIndexContainer />
+          <div>
+            <StatusesIndex />
+            <BookshelfIndexContainer />
+          </div>
           {mappedBooks}
         </div>
       );
