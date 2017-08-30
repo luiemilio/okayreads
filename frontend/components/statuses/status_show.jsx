@@ -39,7 +39,17 @@ class StatusShow extends React.Component {
         </div>
       );
     } else {
-      return null;
+      return (
+        <div className="status-show-main-div">
+          <div>
+            <StatusesIndex />
+            <BookshelfIndexContainer />
+          </div>
+        <div>
+          <h1>No books with this status</h1>
+        </div>
+        </div>
+      );
     }
   }
 }

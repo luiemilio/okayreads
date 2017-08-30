@@ -14,7 +14,7 @@ class User < ApplicationRecord
   validates :username, :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token
-  after_create :create_status_record
+  after_create :create_status_record, :create_default_bookshelves
 
   attr_reader :password
 
@@ -26,6 +26,12 @@ class User < ApplicationRecord
     Book.all.ids.each do |id|
       BookReadStatus.create!(user_id: self.id, book_id: id)
     end
+  end
+
+  def create_default_bookshelves
+    Bookshelf.create!(name: "Fiction", user_id: self.id)
+    Bookshelf.create!(name: "Non-Fiction", user_id: self.id)
+    Bookshelf.create!(name: "Biography", user_id: self.id)
   end
 
   def self.find_by_credentials(username, password)
