@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
   constructor(props) {
@@ -63,10 +64,12 @@ class Header extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div className="header">
-          <div className="header-img-logo">
-            <img src="http://i.imgur.com/MKQ4nC3.jpg"/>
-            <h1>okayreads</h1>
-          </div>
+          <Link to="/">
+            <div className="header-img-logo">
+              <img src="http://i.imgur.com/MKQ4nC3.jpg"/>
+              <h1>okayreads</h1>
+            </div>
+          </Link>
           <div className="header-btn-search-div">
             <button onClick={this.handleAllBooksClick}>Books</button>
             <form onSubmit={this.handleSearch}>
