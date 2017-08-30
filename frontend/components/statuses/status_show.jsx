@@ -33,7 +33,9 @@ class StatusShow extends React.Component {
             <StatusesIndex />
             <BookshelfIndexContainer />
           </div>
-          {mappedBooks}
+          <ul className="status-show-ul-div">
+            {mappedBooks}
+          </ul>
         </div>
       );
     } else {

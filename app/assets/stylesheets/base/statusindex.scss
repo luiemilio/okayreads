@@ -18,7 +18,9 @@
 .status-show-main-div {
   display: flex;
   font-family: 'Merriweather', serif;
-  flex-wrap: wrap
+  // flex-wrap: wrap;
+  flex-direction: row;
+
 }
 
 .status-show-main-div img {
@@ -30,8 +32,14 @@
   border: 2px solid brown;
 }
 
-.status-show-main-div li {
+.status-show-ul-div {
   display: flex;
   flex-wrap: wrap;
-  list-style: none;
+  flex-direction: row;
 }
+
+// .status-show-main-div li {
+//   display: flex;
+//   flex-wrap: wrap;
+//   list-style: none;
+// }
