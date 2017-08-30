@@ -1,17 +1,12 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import SearchIndex from './search_index';
+import { selectAllBooksFromSearch } from '../../reducers/selectors';
 
 const mapStateToProps = (state) => {
   return {
-    books: state.searchedBooks,
+    books: selectAllBooksFromSearch(state),
    };
 };
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//
-//   };
-// };
 
 export default withRouter(connect(mapStateToProps, null)(SearchIndex));

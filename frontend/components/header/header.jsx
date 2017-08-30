@@ -9,7 +9,6 @@ class Header extends React.Component {
     this.handleGuestClick = this.handleGuestClick.bind(this);
     this.handleAllBooksClick = this.handleAllBooksClick.bind(this);
     this.search = '';
-    // this.updateSearch = this.updateSearch.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
   }
 
@@ -27,10 +26,12 @@ class Header extends React.Component {
 
   handleSearch(e) {
     e.preventDefault();
-    this.props.requestBooksFromSearch(this.state.search).then(() => {
-      this.props.history.push('/search');
-    });
-    this.setState({['search']: ''});
+    if (this.state.search) {
+      this.props.requestBooksFromSearch(this.state.search).then(() => {
+        this.props.history.push('/search');
+      });
+      this.setState({['search']: ''});
+    }
   }
 
   handleSubmit(e) {
@@ -66,7 +67,7 @@ class Header extends React.Component {
             <img src="http://i.imgur.com/MKQ4nC3.jpg"/>
             <h1>okayreads</h1>
           </div>
-          <div>
+          <div className="header-btn-search-div">
             <button onClick={this.handleAllBooksClick}>Books</button>
             <form onSubmit={this.handleSearch}>
               <input

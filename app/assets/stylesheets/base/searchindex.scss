@@ -1,0 +1,21 @@
+.book-search-main-div {
+  display: flex;
+}
+
+.book-search-index-main-div h2  {
+  margin-left: 5px;
+}
+
+.book-search-index-main-div ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.book-search-index-main-div img {
+  display: flex;
+  width: 130px;
+  height: 190px;
+  padding: 5px;
+  margin: 5px;
+  border: 2px solid brown;
+}
