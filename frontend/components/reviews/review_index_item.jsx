@@ -34,7 +34,7 @@ class ReviewIndexItem extends React.Component {
       return (
         <div className="review-index-item-main-div">
           <div>
-            <h1>{this.props.review.user.username} rated it {this.props.review.score} stars</h1>
+            <h1><span className="username">{this.props.review.user.username}</span> rated it {this.props.review.score} stars</h1>
             <h3>{this.props.review.title}</h3>
             <p>{this.props.review.body}</p>
           </div>
