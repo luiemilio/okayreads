@@ -44,3 +44,7 @@ export const getBooksfromStatus = (state, statusType) => {
   }
   return bookIds;
 };
+
+export const selectAllBooksFromSearch = (state) => {
+  return values(state.searchedBooks);
+};

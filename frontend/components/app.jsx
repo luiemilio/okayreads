@@ -8,6 +8,7 @@ import BookshelfShowContainer from './bookshelves/bookshelf_show_container';
 import CreateReviewContainer from './reviews/create_review_container';
 import EditReviewContainer from './reviews/edit_review_container';
 import StatusShowContainer from './statuses/status_show_container';
+import SearchIndexContainer from './search/search_index_container';
 import { AuthRoute } from '../util/route_util';
 import { Route, Switch, NavLink, Link } from 'react-router-dom';
 
@@ -24,6 +25,7 @@ const App = () => (
       <Route exact path="/" component={SignUpContainer}/>
       <AuthRoute exact path="/bookshelves/:bookshelfId" component={BookshelfShowContainer}/>
       <AuthRoute exact path="/statuses/:statusType" component={StatusShowContainer}/>
+      <AuthRoute exact path="/search/" component={SearchIndexContainer}/>
     </Switch>
   </div>
 );

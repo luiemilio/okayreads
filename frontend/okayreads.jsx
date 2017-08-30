@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import { Root } from './components/root';
 import configureStore from './store/store';
+import { requestBooksFromSearch } from './actions/search_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -12,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
+  window.requestBooksFromSearch = requestBooksFromSearch;
   window.dispatch = store.dispatch;
   window.getState = store.getState;
   const root = document.getElementById('root');

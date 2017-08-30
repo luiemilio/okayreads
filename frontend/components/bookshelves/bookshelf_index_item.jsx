@@ -20,7 +20,7 @@ class BookshelfIndexItem extends React.Component {
           {this.props.bookshelf.name}
         </Link>
           <button onClick={this.handleClick}>
-            <FontAwesome name="trash" className="fa fa-trash-o" aria-hidden="true" />
+            <FontAwesome name="trash-o" aria-hidden="true" />
           </button>
       </li>
     );
