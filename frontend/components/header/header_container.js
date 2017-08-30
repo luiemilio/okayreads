@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { login, logout, signup } from '../../actions/session_actions';
+import { requestBooksFromSearch } from '../../actions/search_actions';
 import Header from './header';
 
 const mapStateToProps = ({ session }) => {
@@ -15,6 +16,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     login: (user) => dispatch(login(user)),
     logout: () => dispatch(logout()),
+    requestBooksFromSearch: (searchTerm) => dispatch(requestBooksFromSearch(searchTerm)),
   };
 };
 

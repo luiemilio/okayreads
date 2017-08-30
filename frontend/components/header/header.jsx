@@ -3,11 +3,14 @@ import React from 'react';
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { username: '', password: '' };
+    this.state = { username: '', password: '', search: '' };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleLogoutClick = this.handleLogoutClick.bind(this);
     this.handleGuestClick = this.handleGuestClick.bind(this);
     this.handleAllBooksClick = this.handleAllBooksClick.bind(this);
+    this.search = '';
+    // this.updateSearch = this.updateSearch.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   update(field) {
@@ -16,9 +19,24 @@ class Header extends React.Component {
     });
   }
 
+  updateSearch(){
+    return e => this.setState({
+      ['search']: e.currentTarget.value
+    });
+  }
+
+  handleSearch(e) {
+    e.preventDefault();
+    this.props.requestBooksFromSearch(this.state.search).then(() => {
+      this.props.history.push('/search');
+    });
+    this.setState({['search']: ''});
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    this.props.login(this.state).then(() => {
+    const user = {username: this.state.username, password: this.state.password};
+    this.props.login(user).then(() => {
       this.props.history.push('/books');
     });
   }
@@ -48,7 +66,16 @@ class Header extends React.Component {
             <img src="http://i.imgur.com/MKQ4nC3.jpg"/>
             <h1>okayreads</h1>
           </div>
-          <button onClick={this.handleAllBooksClick}>Books</button>
+          <div>
+            <button onClick={this.handleAllBooksClick}>Books</button>
+            <form onSubmit={this.handleSearch}>
+              <input
+                type="text"
+                placeholder="Book search"
+                value={this.state.search}
+                onChange={this.updateSearch()}/>
+            </form>
+          </div>
           <h3>Hi, {this.props.currentUser.username}</h3>
           <button onClick={this.handleLogoutClick}>Log Out</button>
         </div>

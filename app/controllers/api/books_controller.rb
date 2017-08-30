@@ -8,6 +8,11 @@ class Api::BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
+  def search
+    @books = Book.where('lower(title) LIKE ?', "#{params[:search_term].downcase}%")
+    render :index
+  end
+
   def update
     @book = Book.find(params[:id])
 
@@ -17,7 +22,7 @@ class Api::BooksController < ApplicationController
 
   private
   def book_params
-    params.require(:book).permit(:title, :author, :image_url, :publiser, :description, bookshelf_ids: [])
+    params.require(:book).permit(:title, :author, :image_url, :publisher, :description, bookshelf_ids: [])
   end
 
 end
