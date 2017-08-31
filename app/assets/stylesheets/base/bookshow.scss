@@ -18,6 +18,16 @@
   margin-top: 5px;
 };
 
+.book-show-description-div select {
+  margin-left: 3px;
+  border-radius: 3px;
+}
+
+.book-show-description-div label {
+  font-weight: bold;
+  color: #00635d
+}
+
 .book-show-description-div span {
   display: flex;
   flex-direction: column;
