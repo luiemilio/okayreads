@@ -2,11 +2,28 @@ import React from 'react';
 import BookshelfIndexItem from './bookshelf_index_item';
 import FontAwesome from 'react-fontawesome';
 
+const alertOptions = {
+  offset: 14,
+  position: 'bottom left',
+  theme: 'dark',
+  time: 5000,
+  transition: 'scale'
+};
+
 class BookshelfIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {name: '', user_id: this.props.currentUser.id};
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  showAlert() {
+    return () => {
+      this.msg.show('Some text or component', {
+        time: 2000,
+        type: 'success',
+      });
+    };
   }
 
   componentDidMount(){
@@ -17,6 +34,7 @@ class BookshelfIndex extends React.Component {
     e.preventDefault();
     this.props.createBookshelf(this.state).then(() => {
       this.setState({ name: "" });
+      this.showAlert();
     }).then( () => {
       this.props.removeErrors();
     });

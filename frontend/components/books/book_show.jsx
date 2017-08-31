@@ -1,5 +1,8 @@
 import React from 'react';
 import ReviewIndexContainer from '../reviews/review_index_container';
+import AlertContainer from 'react-alert';
+
+
 
 class BookShow extends React.Component {
   constructor(props) {
@@ -7,6 +10,20 @@ class BookShow extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.alertOptions = {
+      offset: 14,
+      position: 'bottom left',
+      theme: 'light',
+      time: 5000,
+      transition: 'scale'
+    };
+  }
+
+  showAlert() {
+    this.msg.show('Bookshelves updated!', {
+      time: 2000,
+      type: 'success',
+    });
   }
 
   componentDidMount() {
@@ -31,6 +48,8 @@ class BookShow extends React.Component {
                   bookshelf_ids: this.bookshelfIds.concat("")
                 };
     this.props.editBook(book);
+    this.showAlert();
+
   }
 
   update(e) {
@@ -106,6 +125,9 @@ class BookShow extends React.Component {
                 {bookshelves}
                 <input type="submit" value="Update"/>
               </form>
+              <div>
+                <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
+              </div>
             </div>
           </div>
           <div className="book-show-description-div">
