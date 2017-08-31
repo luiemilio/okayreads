@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import EditReviewContainer from './edit_review_container';
 
 class ReviewIndexItem extends React.Component {
   constructor(props) {
@@ -18,9 +19,9 @@ class ReviewIndexItem extends React.Component {
       return (
         <div className="review-index-item-main-div">
           <div className="review-index-item-buttons">
-            <Link to={editPath} className="review-index-item-buttons-link">
-              Edit
-            </Link>
+            <EditReviewContainer
+              reviewId={this.props.review.id}
+              />
             <button onClick={this.handleClick} className="review-index-item-buttons-delete">Delete</button>
           </div>
           <div>

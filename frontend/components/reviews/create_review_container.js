@@ -10,7 +10,8 @@ import { removeErrors } from '../../actions/error_actions';
 
 import { requestAllBooks } from '../../actions/book_actions';
 
-import CreateReviewForm from './create_review_form';
+// import CreateReviewForm from './create_review_form';
+import CreateReviewModal from './modals/create_review_modal';
 
 import { withRouter } from 'react-router-dom';
 
@@ -28,7 +29,8 @@ const mapDispatchToProps = (dispatch) => {
     createReview: (review) => dispatch(createReview(review)),
     requestAllBooks: () => dispatch(requestAllBooks()),
     removeErrors: () => dispatch(removeErrors()),
+    requestAllReviews: () => dispatch(requestAllReviews()),
   };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CreateReviewForm));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CreateReviewModal));

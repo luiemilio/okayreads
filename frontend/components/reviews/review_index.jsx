@@ -9,7 +9,9 @@ class ReviewIndex extends React.Component {
   }
 
   render(){
+    // debugger
     const reviews = this.props.reviews.map((review) => {
+      // debugger
       if (this.props.bookReviewIds.includes(review.id)) {
         return (
           <ReviewIndexItemContainer key={review.id} review={review}/>
@@ -22,7 +24,7 @@ class ReviewIndex extends React.Component {
     return (
       <div className="review-index-main-div">
         <div className="review-index-main-div-link">
-          <Link to={path}>Add Review</Link>
+          <CreateReviewFormContainer />
         </div>
         {reviews}
       </div>
