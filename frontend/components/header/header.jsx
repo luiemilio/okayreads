@@ -98,7 +98,7 @@ class Header extends React.Component {
               onChange = { this.update('username') }
               placeholder="Username"/>
             <input
-              type="text"
+              type="password"
               value={ this.state.password }
               onChange = { this.update('password') }
               placeholder="Password"/>

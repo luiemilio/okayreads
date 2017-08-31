@@ -26,13 +26,24 @@
   font-size: 12px;
 }
 
+.header input[type="password"] {
+  background: #FFFFFF;
+  border-radius: 3px;
+  border: #DCD6CC 1px solid;
+  color: #333333;
+  width: 120px;
+  height: 20px;
+  margin: 5px;
+  font-size: 12px;
+}
+
 .header input[type="submit"] {
   background-color: #382110;
   color: white;
   border-radius: 7px;
   box-shadow: none;
-  width: 60px;
-  height: 20px;
+  width: 70px;
+  height: 30px;
   text-align: center;
   font-size: 12px;
 }
@@ -47,8 +58,8 @@
   color: white;
   border-radius: 7px;
   box-shadow: none;
-  width: 60px;
-  height: 20px;
+  width: 70px;
+  height: 30px;
   text-align: center;
   font-size: 12px;
 }
