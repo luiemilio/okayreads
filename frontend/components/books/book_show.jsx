@@ -1,7 +1,8 @@
 import React from 'react';
 import ReviewIndexContainer from '../reviews/review_index_container';
 import AlertContainer from 'react-alert';
-
+import BookshelfIndexContainer from '../bookshelves/bookshelf_index_container';
+import StatusesIndex from '../statuses/statuses_index';
 
 
 class BookShow extends React.Component {
@@ -115,36 +116,41 @@ class BookShow extends React.Component {
       });
 
       return (
-
-        <div className="book-show-main-div">
-          <div className="book-show-img-div">
-            <img src={this.props.book.image_url}/>
-            <div className="book-show-bookshelf-div">
-              <span>Add to a bookshelf</span>
-              <form onSubmit={ this.handleSubmit }>
-                {bookshelves}
-                <input type="submit" value="Update"/>
-              </form>
-              <div>
-                <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
+        <div className="book-show-all">
+          <div className="book-show-side-bar">
+            <StatusesIndex />
+            <BookshelfIndexContainer />
+          </div>
+          <div className="book-show-main-div">
+            <div className="book-show-img-div">
+              <img src={this.props.book.image_url}/>
+              <div className="book-show-bookshelf-div">
+                <span>Add to a bookshelf</span>
+                <form onSubmit={ this.handleSubmit }>
+                  {bookshelves}
+                  <input type="submit" value="Update"/>
+                </form>
+                <div>
+                  <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
+                </div>
               </div>
             </div>
-          </div>
-          <div className="book-show-description-div">
-            <h2>{this.props.book.title}</h2>
-            <span>by: {this.props.book.author}</span>
-            <span>Publisher: {this.props.book.publisher}</span>
-            <div>
-              <label className="book-show-status-label"> Status:
-                <select onChange={this.handleChange} name="status" defaultValue={currentStatus.status}>
-                  <option value="unread">Unread</option>
-                  <option value="read">Read</option>
-                  <option value="reading">Reading</option>
-                </select>
-              </label>
+            <div className="book-show-description-div">
+              <h2>{this.props.book.title}</h2>
+              <span>by: {this.props.book.author}</span>
+              <span>Publisher: {this.props.book.publisher}</span>
+              <div>
+                <label className="book-show-status-label"> Status:
+                  <select onChange={this.handleChange} name="status" defaultValue={currentStatus.status}>
+                    <option value="unread">Unread</option>
+                    <option value="read">Read</option>
+                    <option value="reading">Reading</option>
+                  </select>
+                </label>
+              </div>
+              <p>{this.props.book.description}</p>
+              <ReviewIndexContainer book={this.props.book}/>
             </div>
-            <p>{this.props.book.description}</p>
-            <ReviewIndexContainer book={this.props.book}/>
           </div>
         </div>
       );

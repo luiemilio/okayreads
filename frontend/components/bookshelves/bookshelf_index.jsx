@@ -52,10 +52,10 @@ class BookshelfIndex extends React.Component {
     return (
       <div className="shelves-main-div">
         <form className="add-shelf-form" onSubmit={ this.handleSubmit }>
-          <span>Add a Bookshelf</span>
           <input type="text"
                  onChange={ this.update('name') }
-                 value={this.state.name}/>
+                 value={this.state.name}
+                 placeholder="Add bookshelf"/>
           <input type="submit" value="Add"/>
         </form>
         <ul className="bookshelf-index">

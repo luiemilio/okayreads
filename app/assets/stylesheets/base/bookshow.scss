@@ -1,12 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather');
 
+.book-show-all {
+  display: flex;
+}
+
+.book-show-side-bar {
+
+}
+
 .book-show-main-div {
   display: flex;
   font-family: 'Merriweather', serif;
-  justify-content: center;
+  margin-left: 5px;
 }
 
 .book-show-description-div {
+  display: flex;
+  flex-direction: column;
   margin-left: 10px;
   width: 700px;
 };
@@ -45,7 +55,9 @@
 .book-show-main-div img {
   margin-top: 5px;
   margin-left: 5px;
-  width: 150px;
+  margin-bottom: 5px;
+  width: 170px;
+  border: 1px solid black;
 }
 
 .book-show-bookshelf-div {
@@ -79,4 +91,13 @@
   height: 20px;
   text-align: center;
   font-size: 12px;
+}
+
+.book-show-description-reviews-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-show-img-description {
+  display: flex;
 }

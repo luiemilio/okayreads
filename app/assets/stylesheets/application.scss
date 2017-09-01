@@ -29,8 +29,6 @@
 // BookIndex
 @import "./base/bookindex.scss";
 
-//BookShow
-@import "./base/bookshow.scss";
 
 //Bookshelves
 @import "./base/bookshelfindex.scss";
@@ -67,3 +65,6 @@ img:focus,
 img:active {
  transform: scale(1.1);
 }
+
+//BookShow
+@import "./base/bookshow.scss";

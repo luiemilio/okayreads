@@ -29,4 +29,9 @@ class Book < ApplicationRecord
 
   has_many :book_read_statuses
 
+  def avg_score
+    scores = self.reviews.map{ |review| review.score.to_f }
+    (scores.inject(:+)/scores.length).round(2)
+  end
+
 end

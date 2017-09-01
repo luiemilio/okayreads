@@ -8,6 +8,10 @@
   flex-wrap: wrap;
 }
 
+.book-index li {
+  padding: 1px;
+}
+
 .book-index-main-div img {
   display: flex;
   width: 230px;
@@ -22,5 +26,4 @@
 .book-index-main-div li {
   display: flex;
   flex-wrap: wrap;
-  padding: 5px;
 }

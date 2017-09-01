@@ -52,11 +52,17 @@
   display: flex;
 }
 
+.header-btn-search-div input[type="text"] {
+  height: 35px;
+  width: 270px;
+  text-indent: 5px;
+}
+
 .header button {
   align-self: center;
   background-color: #382110;
   color: white;
-  border-radius: 7px;
+  border-radius: 10px;
   box-shadow: none;
   width: 70px;
   height: 30px;

@@ -15,15 +15,18 @@ class BookIndex extends React.Component {
 
   render(){
     const books = this.props.books;
+
     return (
       <div className="book-index-main-div">
         <div className="book-index-side-bar">
           <StatusesIndex />
           <BookshelfIndexContainer />
         </div>
-        <ul className="book-index">
-          {books.map(book => <BookIndexItem key={book.id} book={book}/>)}
-        </ul>
+        <div>
+          <ul className="book-index">
+            {books.map(book => <BookIndexItem key={book.id} book={book}/>)}
+          </ul>
+        </div>
       </div>
     );
   }
