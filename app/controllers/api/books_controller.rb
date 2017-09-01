@@ -1,7 +1,7 @@
 class Api::BooksController < ApplicationController
 
   def index
-    @books = Book.all
+    @books = Book.order(:title)
   end
 
   def show
@@ -10,6 +10,7 @@ class Api::BooksController < ApplicationController
 
   def search
     @books = Book.where('lower(title) LIKE ? OR lower(author) LIKE ?', "%#{params[:search_term].downcase}%", "%#{params[:search_term].downcase}%")
+    @books.sort
     render :index
   end
 

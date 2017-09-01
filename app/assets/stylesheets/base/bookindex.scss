@@ -10,14 +10,17 @@
 
 .book-index-main-div img {
   display: flex;
-  width: 130px;
-  height: 190px;
+  width: 230px;
+  height: 350px;
   padding: 5px;
-  margin: 5px;
-  border: 2px solid brown;;
+  box-shadow: 10px;
+  margin: 3px;
+  border: 1px solid brown;
+  background-color: grey;
 }
 
 .book-index-main-div li {
   display: flex;
   flex-wrap: wrap;
+  padding: 5px;
 }
