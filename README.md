@@ -1,50 +1,62 @@
 # okayreads
 
-[Heroku Link] Heroku Link will go here
+[okayreads live][heroku]
+[heroku]: https://okayreads-.herokuapp.com/
 
-[Trello Link][trello]
+Okayreads is a web application based on Goodreads. It is a complete full-stack project. It utilizes PostgreSQL for it's database. The backened is handled with Ruby on Rails while the frontend uses React/Redux libraries.
 
-[trello]: https://trello.com/b/UhNrHi99/okayreads
+## Features and Implementation
 
-Okayreads is a web application inspired by Goodreads built using Ruby on Rails for
-the backend, React/Redux libraries for the frontend and PostgreSQL for the database.
+### Bookshelves
+For this feature I implemented two tables: one that holds the bookshelves and another one that holds the books that each of those bookshelves contains. These bookshelves table is linked to a user by a `user_id` column. The ones that holds the books for each bookshelf links both a book and a bookshelf by `book_id` and `bookshelf_id`.
 
-## Features
+I used two components to deal with the Bookshelves. The `BookshelfIndex` holds all the bookshelves for the current user and a form to add new ones. When you click on a bookshelf it takes you to the `BookshelfShow` component which holds all the books that belong to it.
 
-- [ ] Book index
-- [ ] Shelves
-- [ ] Reviews
-- [ ] Read status
+![bookshelf index](docs/screenshots/bookshelves_index.png)
 
-## Design Docs
-* [View Wireframes][wireframes]
-* [React Components][components]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-* [Sample State][sample-state]
+### Reviews
+This feature uses a `Review` table that stores the reviews created by users for a particular book. Review entries have the columns: `user_id`, `book_id`, `title`, `body` and `score`.
 
-[wireframes]: docs/wireframes
-[components]: docs/component_hierarchy.md
-[sample-state]: docs/sample_state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+The main review component is `ReviewIndex`. This component renders a list of reviews by way of the `ReviewIndexItem` component.
 
-## Timeline
+This is the code to iterate over every review and render them:
 
-### Phase 1 Backend setup and user authentication (2 days)
-Setup the Ruby on Rails backend and frontend user authentication.
+```javascript
+render(){
+  const reviews = this.props.reviews.map((review) => {
 
-### Phase 2 Book Index (2 days)
-All books are shown on the user's page.
+    if (this.props.bookReviewIds.includes(review.id)) {
+      return (
+        <ReviewIndexItemContainer key={review.id} review={review}/>
+      );
+    }
+  });
 
-### Phase 3 Book details page (2 days)
-Each book has its own detail's page.
+  return (
+    <div className="review-index-main-div">
+      <div className="review-index-main-div-link">
+        <CreateReviewFormContainer />
+      </div>
+      {reviews}
+    </div>
+  );
+}
+```
 
-### Phase 4 Shelves (2 days)
-Users can create shelves and add books to them.
+![Reviews](docs/screenshots/reviews_index.png)
 
-### Phase 5 Reviews (1 day)
-Users can create reviews for users.
+You can also create and edit reviews. Each of these was implemented using the `React Modal` library. This library allows to create a modal without any hassle.
 
-### Phase 6 Read status (1 day)
-Each book has a read status that can be toggled by each user in their shelf.
+![Add review modal](docs/screenshots/add_review_modal.png)
+
+## Future Implementations
+
+To further my project I plan to add more features to it.
+
+### User admin pages
+
+This feature will allow to have administrative users. These users will be able to change website configurations along with uploading new books through the frontend.
+
+### Tags
+
+Books will be able to have tags, that users can then use to search books by.
