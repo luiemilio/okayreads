@@ -26,9 +26,7 @@ class CreateReviewModal extends React.Component {
       modalIsOpen: false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-
     this.openModal = this.openModal.bind(this);
-    // this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 

@@ -10,7 +10,6 @@ import { removeErrors } from '../../actions/error_actions';
 
 import { requestAllBooks } from '../../actions/book_actions';
 
-// import CreateReviewForm from './create_review_form';
 import CreateReviewModal from './modals/create_review_modal';
 
 import { withRouter } from 'react-router-dom';
