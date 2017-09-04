@@ -10,7 +10,6 @@ class ReviewIndex extends React.Component {
 
   render(){
     const reviews = this.props.reviews.map((review) => {
-
       if (this.props.bookReviewIds.includes(review.id)) {
         return (
           <ReviewIndexItemContainer key={review.id} review={review}/>

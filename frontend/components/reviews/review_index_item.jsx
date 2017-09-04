@@ -25,7 +25,9 @@ class ReviewIndexItem extends React.Component {
             <button onClick={this.handleClick} className="review-index-item-buttons-delete">Delete</button>
           </div>
           <div>
-            <h1><span className="username">{this.props.review.user.username}</span> rated it {this.props.review.score} stars</h1>
+            <h1>
+              <span className="username">{this.props.review.user.username}</span>
+              rated it {this.props.review.score} stars</h1>
             <h3>{this.props.review.title}</h3>
             <p>{this.props.review.body}</p>
           </div>
