@@ -66,7 +66,7 @@ class Header extends React.Component {
         <div className="header">
           <Link to="/">
             <div className="header-img-logo">
-              <img src="http://i.imgur.com/MKQ4nC3.jpg"/>
+              <img src="https://i.imgur.com/MKQ4nC3.jpg"/>
               <h1>okayreads</h1>
             </div>
           </Link>
@@ -88,7 +88,7 @@ class Header extends React.Component {
       return (
         <div className="header">
           <div className="header-img-logo">
-            <img src="http://i.imgur.com/MKQ4nC3.jpg"/>
+            <img src="https://i.imgur.com/MKQ4nC3.jpg"/>
             <h1>okayreads</h1>
           </div>
           <form className="header-login-form" onSubmit={ this.handleSubmit }>
