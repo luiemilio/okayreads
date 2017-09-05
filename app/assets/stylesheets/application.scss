@@ -68,3 +68,12 @@ img:active {
 
 //BookShow
 @import "./base/bookshow.scss";
+
+input[type="text"] {
+  padding-left: 5px;
+}
+
+
+textarea {
+  padding-left: 5px;
+}
