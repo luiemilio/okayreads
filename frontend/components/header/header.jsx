@@ -71,7 +71,7 @@ class Header extends React.Component {
             </div>
           </Link>
           <div className="header-btn-search-div">
-            <button onClick={this.handleAllBooksClick}>Books</button>
+            <button onClick={this.handleAllBooksClick}>All Books</button>
             <form onSubmit={this.handleSearch}>
               <input
                 type="text"

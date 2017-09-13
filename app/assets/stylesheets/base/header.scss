@@ -5,13 +5,13 @@
   align-items: center;
   background-color: #F4F1EA;
   height: 65px;
-  font-family: 'Merriweather', serif;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   border-bottom: 1px solid black;
 }
 
 .header h1 {
   color: #382110;
-  font-family: 'Merriweather', serif;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 40px;
 }
 
@@ -60,14 +60,19 @@
 
 .header button {
   align-self: center;
-  background-color: #382110;
-  color: white;
-  border-radius: 10px;
-  box-shadow: none;
+  color: #382110;
+  // border-radius: 10px;
+  box-sizing: border-box;
+  // box-shadow: none;
   width: 70px;
   height: 30px;
   text-align: center;
-  font-size: 12px;
+  font-size: 16px;
+}
+
+.header button:hover {
+  color: white;
+  background-color: #382110;
 }
 
 .header h3 {

@@ -10,11 +10,14 @@ class StatusesIndex extends React.Component {
   render() {
     return (
       <div className="statuses-index-main-div">
-        <ul className="statuses-index-ul">
-          <Link to="/statuses/read">Read</Link>
-          <Link to="/statuses/unread">Unread</Link>
-          <Link to="/statuses/reading">Reading</Link>
-        </ul>
+        <h1>bookshelves</h1>
+        <div>
+          <ul className="statuses-index-ul">
+            <Link to="/statuses/read">read</Link>
+            <Link to="/statuses/reading">currently-reading</Link>
+            <Link to="/statuses/unread">to-read</Link>
+          </ul>
+        </div>
       </div>
     );
   }

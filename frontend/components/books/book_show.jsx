@@ -144,7 +144,7 @@ class BookShow extends React.Component {
                   <select onChange={this.handleChange} name="status" defaultValue={currentStatus.status}>
                     <option value="unread">Unread</option>
                     <option value="read">Read</option>
-                    <option value="reading">Reading</option>
+                    <option value="reading">Currently reading</option>
                   </select>
                 </label>
               </div>

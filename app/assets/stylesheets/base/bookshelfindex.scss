@@ -1,11 +1,12 @@
 .shelves-main-div {
-  font-family: 'Merriweather', serif;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  border: 1px solid brown;
+  border-right: 1px solid #d7d7d7;
   margin-left: 5px;
-  margin-top: 5px;
-  background-color: #F4F1EA;
+  margin-right: 10px;
+  // margin-top: 5px;
+  // background-color: #F4F1EA;
 }
 
 .add-shelf-form {
@@ -13,18 +14,20 @@
   margin-top: 5px;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid brown;
+  border-bottom: 1px solid #d7d7d7;
 }
 
 .add-shelf-form input[type=submit] {
-  background-color: #382110;
-  color: white;
-  border-radius: 7px;
+  background-color: #F4F1EA;
+  border: 1px solid #D6D0C4;
+  color: #333333;
+  border-radius: 3px;
   box-shadow: none;
-  width: 50px;
-  height: 15px;
+  width: 70px;
+  height: 20px;
   text-align: center;
-  font-size: 12px;
+  font-size: 11px;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
   margin-bottom: 5px;
   margin-left: 5px;
 }
@@ -42,7 +45,7 @@
 
 .shelves-main-div ul {
   padding-top: 5px;
-  font-size: 13px;
+  font-size: 14px;
   margin-left: 5px;
 }
 

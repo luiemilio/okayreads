@@ -56,7 +56,7 @@ class BookshelfIndex extends React.Component {
                  onChange={ this.update('name') }
                  value={this.state.name}
                  placeholder="Add bookshelf"/>
-          <input type="submit" value="Add"/>
+               <input type="submit" value="add shelf"/>
         </form>
         <ul className="bookshelf-index">
           {bookshelves.map(bookshelf => <BookshelfIndexItem key={bookshelf.id} deleteBookshelf = {this.props.deleteBookshelf} bookshelf={bookshelf}/>)}

@@ -64,11 +64,14 @@
   display: flex;
   flex-direction: column;
   margin-left: 5px;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .book-show-bookshelf-div span {
-  border-bottom: 1px solid brown;
+  border-bottom: 1px solid #d7d7d7;
   margin-bottom: 5px;
+  color: #aaa;
+  // font-weight: bold;
 }
 
 .book-show-bookshelf-div form {
@@ -80,17 +83,22 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
+  color: #00635d;
 }
 
 .book-show-bookshelf-div form input[type="submit"]{
-  background-color: #382110;
-  color: white;
-  border-radius: 7px;
+  background-color: #F4F1EA;
+  border: 1px solid #D6D0C4;
+  color: #333333;
+  border-radius: 3px;
   box-shadow: none;
-  width: 50px;
+  width: 70px;
   height: 20px;
   text-align: center;
-  font-size: 12px;
+  font-size: 11px;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  margin-bottom: 5px;
+  margin-left: 5px;
 }
 
 .book-show-description-reviews-div {

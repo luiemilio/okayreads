@@ -1,23 +1,36 @@
 .statuses-index-main-div {
-  font-family: 'Merriweather', serif;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  border: 1px solid brown;
+  border-bottom: 1px solid #d7d7d7;
+  border-right: 1px solid #d7d7d7;
   margin-left: 5px;
   margin-top: 5px;
-  background-color: #F4F1EA;
+  margin-right: 10px;
+  // margin-bottom: 5px;
+  // background-color: #F4F1EA;
+}
+
+.statuses-index-main-div h1 {
+  margin-left: 5px;
+  color: #aaa;
+  font-size: 18px;
+  font-weight: normal;
 }
 
 .statuses-index-ul {
   display: flex;
   flex-direction: column;
+  margin-top: 5px;
   margin-left: 5px;
   margin-bottom: 5px;
+  font-size: 14px;
+  color: #00635d;
 }
 
 .status-show-main-div {
   display: flex;
-  font-family: 'Merriweather', serif;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   // flex-wrap: wrap;
   flex-direction: row;
 
