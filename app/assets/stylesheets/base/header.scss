@@ -38,14 +38,21 @@
 }
 
 .header input[type="submit"] {
-  background-color: #382110;
-  color: white;
-  border-radius: 7px;
-  box-shadow: none;
+  border: 1px solid #D6D0C4;
+  align-self: center;
+  color: #382110;
+  border-radius: 3px;
+  box-sizing: border-box;
+  // box-shadow: none;
   width: 70px;
   height: 30px;
   text-align: center;
-  font-size: 12px;
+  font-size: 16px;
+}
+
+.header input[type="submit"]:hover {
+  color: white;
+  background-color: #382110;
 }
 
 .header-btn-search-div {
