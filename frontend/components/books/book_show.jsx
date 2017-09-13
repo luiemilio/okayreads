@@ -139,7 +139,7 @@ class BookShow extends React.Component {
               <h2>{this.props.book.title}</h2>
               <span>by: {this.props.book.author}</span>
               <span>Publisher: {this.props.book.publisher}</span>
-              <div>
+              <div className="status-dropdown">
                 <label className="book-show-status-label"> Status:
                   <select onChange={this.handleChange} name="status" defaultValue={currentStatus.status}>
                     <option value="unread">Unread</option>

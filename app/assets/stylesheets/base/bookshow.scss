@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: column;
   margin-left: 10px;
-  width: 700px;
+  width: 600px;
 };
 
 .book-show-description-div h2 {
@@ -49,7 +49,8 @@
 .book-show-description-div p {
   font-size: 14px;
   font-style: normal;
-  margin-top: 10px;
+  margin-top: 5px;
+  border-bottom: 1px solid #d7d7d7;
 };
 
 .book-show-main-div img {
@@ -108,4 +109,17 @@
 
 .book-show-img-description {
   display: flex;
+}
+
+.status-dropdown {
+  margin-top: 3px;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+}
+
+.status-dropdown select {
+  background-color: #F4F1EA;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  color: #333333;
+  font-size: 12px;
+  height: 20px;
 }

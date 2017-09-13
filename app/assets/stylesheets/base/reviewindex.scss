@@ -41,19 +41,26 @@
 }
 
 .review-index-main-div-link {
-  border-top: 1px solid brown;
-  margin-top: 10px;
-  font-size: 14px;
-  margin-left: 5px;
-  margin-bottom: 10px;
-  background-color: #382110;
-  color: white;
-  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F4F1EA;
+  border: 1px solid #D6D0C4;
+  color: #333333;
   border-radius: 3px;
+  box-shadow: none;
+  width: 75px;
+  height: 25px;
   text-align: center;
+  font-size: 11px;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-top: 5px;
 }
 
 .review-index-item-main-div {
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
   display: flex;
   flex-direction: column;
   color: #827a7a;
@@ -72,7 +79,7 @@
 }
 
 .review-index-item-buttons-link {
-  margin: 5px;
+  margin: 5px
 }
 
 .review-index-item-buttons button {
