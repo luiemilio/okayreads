@@ -11,6 +11,7 @@ class Header extends React.Component {
     this.handleAllBooksClick = this.handleAllBooksClick.bind(this);
     this.search = '';
     this.handleSearch = this.handleSearch.bind(this);
+    this.handleBookLink = this.handleBookLink.bind(this);
   }
 
   update(field) {
@@ -33,6 +34,10 @@ class Header extends React.Component {
       });
       this.setState({['search']: ''});
     }
+  }
+
+  handleBookLink(id) {
+    this.props.history.push(`/books/${id}`);
   }
 
   handleSubmit(e) {
@@ -62,6 +67,26 @@ class Header extends React.Component {
 
   render() {
     if (this.props.loggedIn) {
+
+      const searchTerms = this.state.search;
+      // debugger
+
+      let results = Object.values(this.props.books).map((book) => {
+        if (this.state.search.length > 0 &&
+            (book.title.toLowerCase().includes(searchTerms.toLowerCase()) ||
+            book.author.toLowerCase().includes(searchTerms.toLowerCase())
+            ) ) {
+          return (
+            <li key={book.id}>
+              {book.title}
+            </li>);
+        }
+      });
+
+      results = results.slice(0, 6);
+      // debugger
+
+
       return (
         <div className="header">
           <Link to="/">
@@ -72,13 +97,18 @@ class Header extends React.Component {
           </Link>
           <div className="header-btn-search-div">
             <button onClick={this.handleAllBooksClick}>All Books</button>
-            <form onSubmit={this.handleSearch}>
-              <input
-                type="text"
-                placeholder="Book search"
-                value={this.state.search}
-                onChange={this.updateSearch()}/>
-            </form>
+            <div className="header-search-div">
+              <form onSubmit={this.handleSearch}>
+                <input
+                  type="text"
+                  placeholder="Book search"
+                  value={this.state.search}
+                  onChange={this.updateSearch()}/>
+              </form>
+              <ul>
+                {results}
+              </ul>
+            </div>
           </div>
           <h3>Hi, {this.props.currentUser.username}</h3>
           <button onClick={this.handleLogoutClick}>Log Out</button>

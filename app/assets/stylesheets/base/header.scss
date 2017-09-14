@@ -57,12 +57,41 @@
 
 .header-btn-search-div {
   display: flex;
+  // flex-direction: column;
 }
 
 .header-btn-search-div input[type="text"] {
   height: 35px;
   width: 270px;
   text-indent: 5px;
+}
+
+.header-search-div {
+  display: flex;
+  flex-direction: column;
+  // margin-top: 5px;
+}
+
+.header-search-div form {
+  // position: absolute;
+}
+
+.header-search-div ul {
+  max-height: 20px;
+  margin-top: 50px;
+  position: fixed;
+  width: 270px;
+  margin-left: 5px;
+  // background-color: #F4F1EA;
+  height: 300px;
+}
+
+.header-search-div li {
+  font-size: 12px;
+  padding: 5px;
+  border-bottom: 1px solid black;
+  margin-left: 5px;
+  background-color: #F4F1EA;
 }
 
 .header button {

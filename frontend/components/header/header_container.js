@@ -4,11 +4,12 @@ import { login, logout, signup } from '../../actions/session_actions';
 import { requestBooksFromSearch } from '../../actions/search_actions';
 import Header from './header';
 
-const mapStateToProps = ({ session }) => {
+const mapStateToProps = ({ session, books }) => {
   return {
     currentUser: session.currentUser,
     loggedIn: Boolean(session.currentUser),
-    errors: session.errors.login
+    errors: session.errors.login,
+    books: books
    };
 };
 

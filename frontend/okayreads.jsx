@@ -14,4 +14,5 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   const root = document.getElementById('root');
   ReactDom.render(<Root store={ store } />, root);
+  window.getState = store.getState;
 });
