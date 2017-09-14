@@ -115,6 +115,7 @@ class BookShow extends React.Component {
           );
         }
       });
+
       let avgScore = this.props.book.avg_score;
       let rating = avgScore === null ? 0 : avgScore;
 

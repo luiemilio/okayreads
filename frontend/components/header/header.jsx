@@ -11,7 +11,7 @@ class Header extends React.Component {
     this.handleAllBooksClick = this.handleAllBooksClick.bind(this);
     this.search = '';
     this.handleSearch = this.handleSearch.bind(this);
-    this.handleBookLink = this.handleBookLink.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
   }
 
   update(field) {
@@ -36,7 +36,7 @@ class Header extends React.Component {
     }
   }
 
-  handleBookLink(id) {
+  handleBlur() {
     this.setState({['search']: ''});
   }
 
@@ -110,6 +110,7 @@ class Header extends React.Component {
             <div className="header-search-div">
               <form onSubmit={this.handleSearch}>
                 <input
+                  onBlur={this.handleBlur}
                   type="text"
                   placeholder="Book search"
                   value={this.state.search}
