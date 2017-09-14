@@ -31,7 +31,11 @@ class Book < ApplicationRecord
 
   def avg_score
     scores = self.reviews.map{ |review| review.score.to_f }
-    (scores.inject(:+)/scores.length).round(2)
+    if scores.length > 0
+      (scores.inject(:+)/scores.length).round(2)
+    else
+      nil
+    end
   end
 
 end
