@@ -37,7 +37,7 @@ class Header extends React.Component {
   }
 
   handleBookLink(id) {
-    this.props.history.push(`/books/${id}`);
+    this.setState({['search']: ''});
   }
 
   handleSubmit(e) {
@@ -76,14 +76,24 @@ class Header extends React.Component {
             (book.title.toLowerCase().includes(searchTerms.toLowerCase()) ||
             book.author.toLowerCase().includes(searchTerms.toLowerCase())
             ) ) {
+          const path = `/books/${book.id}`;
           return (
-            <li key={book.id}>
-              {book.title}
-            </li>);
+            <Link onClick={this.handleBookLink} key={book.id} to={path}>
+              <li>
+                <div className="result-body">
+                  <img src={book.image_url}/>
+                  <div className="result-details">
+                    <span>{book.title}</span>
+                    <span>by: {book.author}</span>
+                 </div>
+                </div>
+              </li>
+            </Link>
+          );
         }
       });
 
-      results = results.slice(0, 6);
+      // results = results.slice(0, 6);
       // debugger
 
 

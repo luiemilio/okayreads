@@ -115,6 +115,8 @@ class BookShow extends React.Component {
           );
         }
       });
+      let avgScore = this.props.book.avg_score;
+      let rating = avgScore === null ? 0 : avgScore;
 
       return (
         <div className="book-show-all">
@@ -145,7 +147,7 @@ class BookShow extends React.Component {
                   className="description-rating"
                   name="book-rating"
                   starCount={5}
-                  value={this.props.book.avg_score}
+                  value={rating}
                   editing={false}
                   />
               </label>
