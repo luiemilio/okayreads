@@ -3,6 +3,7 @@ import ReviewIndexContainer from '../reviews/review_index_container';
 import AlertContainer from 'react-alert';
 import BookshelfIndexContainer from '../bookshelves/bookshelf_index_container';
 import StatusesIndex from '../statuses/statuses_index';
+import StarRatingComponent from 'react-star-rating-component';
 
 
 class BookShow extends React.Component {
@@ -139,6 +140,15 @@ class BookShow extends React.Component {
               <h2>{this.props.book.title}</h2>
               <span>by: {this.props.book.author}</span>
               <span>Publisher: {this.props.book.publisher}</span>
+              <label className="description-rating-label"> Rating:
+                <StarRatingComponent
+                  className="description-rating"
+                  name="book-rating"
+                  starCount={5}
+                  value={this.props.book.avg_score}
+                  editing={false}
+                  />
+              </label>
               <div className="status-dropdown">
                 <label className="book-show-status-label"> Status:
                   <select onChange={this.handleChange} name="status" defaultValue={currentStatus.status}>

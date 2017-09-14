@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import EditReviewContainer from './edit_review_container';
+import StarRatingComponent from 'react-star-rating-component';
 
 class ReviewIndexItem extends React.Component {
   constructor(props) {
@@ -27,7 +28,15 @@ class ReviewIndexItem extends React.Component {
           <div>
             <h1>
               <span className="username">{this.props.review.user.username}</span>
-              rated it {this.props.review.score} stars</h1>
+              rated it
+              <StarRatingComponent
+                className="review-rating"
+                name="book-rating"
+                starCount={5}
+                value={this.props.review.score}
+                editing={false}
+                />
+            </h1>
             <h3>{this.props.review.title}</h3>
             <p>{this.props.review.body}</p>
           </div>
@@ -37,7 +46,20 @@ class ReviewIndexItem extends React.Component {
       return (
         <div className="review-index-item-main-div">
           <div>
-            <h1><span className="username">{this.props.review.user.username}</span> rated it {this.props.review.score} stars</h1>
+            <button></button>
+          </div>
+          <div>
+            <h1>
+              <span className="username">{this.props.review.user.username}</span>
+              rated it
+              <StarRatingComponent
+                className="review-rating"
+                name="book-rating"
+                starCount={5}
+                value={this.props.review.score}
+                editing={false}
+                />
+            </h1>
             <h3>{this.props.review.title}</h3>
             <p>{this.props.review.body}</p>
           </div>

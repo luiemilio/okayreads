@@ -38,6 +38,16 @@
   color: #00635d
 }
 
+.description-rating-label {
+  display: flex;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.description-rating {
+  margin-left: 2px;
+  // align-self: center;
+}
+
 .book-show-description-div span {
   display: flex;
   flex-direction: column;
