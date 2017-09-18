@@ -4,6 +4,7 @@ import AlertContainer from 'react-alert';
 import BookshelfIndexContainer from '../bookshelves/bookshelf_index_container';
 import StatusesIndex from '../statuses/statuses_index';
 import StarRatingComponent from 'react-star-rating-component';
+import PreviewModal from '../preview/preview_modal';
 
 
 class BookShow extends React.Component {
@@ -128,6 +129,7 @@ class BookShow extends React.Component {
           <div className="book-show-main-div">
             <div className="book-show-img-div">
               <img src={this.props.book.image_url}/>
+              <PreviewModal book={this.props.book}/>
               <div className="book-show-bookshelf-div">
                 <span>Add to a bookshelf</span>
                 <form onSubmit={ this.handleSubmit }>
