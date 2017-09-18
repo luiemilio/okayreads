@@ -11,6 +11,10 @@ class Header extends React.Component {
     this.handleAllBooksClick = this.handleAllBooksClick.bind(this);
     this.search = '';
     this.handleSearch = this.handleSearch.bind(this);
+    this.resetSearch = this.resetSearch.bind(this);
+    this.hover = false;
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
   }
 
@@ -36,8 +40,14 @@ class Header extends React.Component {
     }
   }
 
-  handleBlur() {
+  resetSearch() {
     this.setState({['search']: ''});
+  }
+
+  handleBlur() {
+    if (!this.hover) {
+      this.resetSearch();
+    }
   }
 
   handleSubmit(e) {
@@ -52,6 +62,16 @@ class Header extends React.Component {
     this.props.logout().then(() => {
       this.props.history.push('/');
     });
+  }
+
+  handleMouseEnter(e) {
+    e.preventDefault();
+    this.hover = true;
+  }
+
+  handleMouseLeave(e) {
+    e.preventDefault();
+    this.hover = false;
   }
 
   handleGuestClick(e) {
@@ -71,6 +91,8 @@ class Header extends React.Component {
       const searchTerms = this.state.search;
       // debugger
 
+
+
       let results = Object.values(this.props.books).map((book) => {
         if (this.state.search.length > 0 &&
             (book.title.toLowerCase().includes(searchTerms.toLowerCase()) ||
@@ -78,8 +100,10 @@ class Header extends React.Component {
             ) ) {
           const path = `/books/${book.id}`;
           return (
-            <Link onClick={this.handleBookLink} key={book.id} to={path}>
-              <li>
+            <Link key={book.id} to={path}>
+              <li onMouseEnter={this.handleMouseEnter}
+                  onMouseLeave={this.handleMouseLeave}
+                  onClick={this.resetSearch}>
                 <div className="result-body">
                   <img src={book.image_url}/>
                   <div className="result-details">
@@ -92,9 +116,6 @@ class Header extends React.Component {
           );
         }
       });
-
-      // results = results.slice(0, 6);
-      // debugger
 
 
       return (

@@ -12,3 +12,17 @@
   margin-bottom: 5px;
   margin-left: 5px;
 }
+
+.disabled {
+  pointer-events:none;
+  opacity:0.7;
+}
+
+.pager {
+  display: flex;
+  justify-content: center;
+}
+
+.pager li {
+  margin: 5px;
+}
