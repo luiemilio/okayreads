@@ -5,7 +5,7 @@
 #  id         :integer          not null, primary key
 #  book_id    :integer          not null
 #  user_id    :integer          not null
-#  status     :string           default("not read"), not null
+#  status     :string           default("unread"), not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

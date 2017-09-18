@@ -75,11 +75,12 @@ class PreviewModal extends React.Component {
   }
 
   render() {
-    if (this.props.book) {
+    if (this.props.book.preview_url) {
       let pagination = null;
       if (this.state.pages) {
         pagination = this.renderPagination(this.state.page, this.state.pages);
       }
+      // debugger
       return (
         <div>
           <button className="open-preview-btn"
@@ -93,7 +94,7 @@ class PreviewModal extends React.Component {
               style={customStyles}
             >
             <div className="preview-main-div">
-              <PDF file="http://res.cloudinary.com/dkefwablr/raw/upload/v1505761957/h2g2.pdf"
+              <PDF file={this.props.book.preview_url}
                    onDocumentComplete={this.onDocumentComplete}
                    onPageComplete={this.onPageComplete}
                    page={this.state.page} />
