@@ -42,6 +42,7 @@
 .description-rating-label {
   display: flex;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  z-index: -999999;
 }
 
 .description-rating {
