@@ -68,6 +68,7 @@
   border-radius: 3px;
   background-color: #e4e4e4;
   width: 500px;
+  z-index: -2;
 }
 
 .review-index-item-buttons {
@@ -92,6 +93,13 @@
   align-items: center;
   margin-left: 5px;
   font-size: 12px;
+  // z-index: -9999999999;
+}
+
+
+.review-rating {
+  z-index: 1;
+  // font-size: 20px;
 }
 
 .username {
