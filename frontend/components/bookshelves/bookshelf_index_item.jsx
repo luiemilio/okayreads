@@ -17,7 +17,7 @@ class BookshelfIndexItem extends React.Component {
     return (
       <li>
         <Link to={`/bookshelves/${this.props.bookshelf.id}`}>
-          {this.props.bookshelf.name}
+          {this.props.bookshelf.name} ({this.props.bookshelf.books.length})
         </Link>
           <button onClick={this.handleClick}>
             <FontAwesome name="trash-o" aria-hidden="true" />

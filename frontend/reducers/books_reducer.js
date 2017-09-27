@@ -8,6 +8,7 @@ const BooksReducer = (state = {}, action) => {
 
   switch(action.type) {
     case RECEIVE_ALL_BOOKS:
+    // debugger
       return merge({}, state, action.books);
     case RECEIVE_SINGLE_BOOK:
       let newState = merge({}, state);
