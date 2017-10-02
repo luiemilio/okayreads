@@ -30,11 +30,11 @@ class SignUp extends React.Component {
   }
 
   render() {
-    let errorMsgs;
-    if (this.props.errors){
-      errorMsgs = this.props.errors.map((error, idx) => {
+    let errors;
+    if (this.props.errors) {
+      errors = this.props.errors.map((error) => {
         return (
-          <h3 key={idx}>{error}</h3>
+          <p>{error}</p>
         );
       });
     }
@@ -54,10 +54,10 @@ class SignUp extends React.Component {
               onChange = { this.update('password') }
               placeholder="Password"/>
             <input type="submit" name="" value="Sign up"/>
+            <div className="signup-errors">
+              {errors}
+            </div>
           </form>
-        </div>
-        <div className="signup-errors">
-          {errorMsgs}
         </div>
       </div>
     );

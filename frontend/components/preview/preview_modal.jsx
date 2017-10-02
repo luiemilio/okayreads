@@ -80,7 +80,7 @@ class PreviewModal extends React.Component {
       if (this.state.pages) {
         pagination = this.renderPagination(this.state.page, this.state.pages);
       }
-      // debugger
+      
       return (
         <div>
           <button className="open-preview-btn"

@@ -89,10 +89,7 @@ class Header extends React.Component {
     if (this.props.loggedIn) {
 
       const searchTerms = this.state.search;
-      // debugger
-
-
-
+    
       let results = Object.values(this.props.books).map((book) => {
         if (this.state.search.length > 0 &&
             (book.title.toLowerCase().includes(searchTerms.toLowerCase()) ||
