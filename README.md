@@ -2,7 +2,7 @@
 
 [okayreads live][heroku]
 
-[heroku]: https://okayreads-.herokuapp.com/
+[heroku]: http://okayreads.com/
 
 Okayreads is a web application based on Goodreads. It is a complete full-stack project. It utilizes PostgreSQL for it's database. The backened is handled with Ruby on Rails while the frontend uses React/Redux libraries.
 
