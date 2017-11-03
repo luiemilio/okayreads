@@ -1,6 +1,6 @@
 import React from 'react';
 import StatusShowItem from  './status_show_item';
-import StatusesIndex from './statuses_index';
+import StatusesIndexContainer from './statuses_index_container';
 import BookshelfIndexContainer from '../bookshelves/bookshelf_index_container';
 
 

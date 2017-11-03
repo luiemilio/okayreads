@@ -2,7 +2,7 @@ import React from 'react';
 import ReviewIndexContainer from '../reviews/review_index_container';
 import AlertContainer from 'react-alert';
 import BookshelfIndexContainer from '../bookshelves/bookshelf_index_container';
-import StatusesIndex from '../statuses/statuses_index';
+import StatusesIndexContainer from '../statuses/statuses_index_container';
 import StarRatingComponent from 'react-star-rating-component';
 import PreviewModal from '../preview/preview_modal';
 

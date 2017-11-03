@@ -9,6 +9,7 @@ import CreateReviewContainer from './reviews/create_review_container';
 import EditReviewContainer from './reviews/edit_review_container';
 import StatusShowContainer from './statuses/status_show_container';
 import SearchIndexContainer from './search/search_index_container';
+import StatusesIndexContainer from './statuses/statuses_index_container';
 import { AuthRoute } from '../util/route_util';
 import { Route, Switch, NavLink, Link } from 'react-router-dom';
 

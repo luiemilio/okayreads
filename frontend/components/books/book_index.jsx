@@ -1,7 +1,7 @@
 import React from 'react';
 import BookIndexItem from './book_index_item';
 import BookshelfIndexContainer from '../bookshelves/bookshelf_index_container';
-import StatusesIndex from '../statuses/statuses_index';
+import StatusesIndexContainer from '../statuses/statuses_index_container';
 import getBooksfromStatus from '../../reducers/selectors.js';
 
 class BookIndex extends React.Component {
@@ -19,7 +19,7 @@ class BookIndex extends React.Component {
     return (
       <div className="book-index-main-div">
         <div className="book-index-side-bar">
-          <StatusesIndex />
+          <StatusesIndexContainer />
           <BookshelfIndexContainer />
         </div>
         <div>

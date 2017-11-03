@@ -1,6 +1,6 @@
 import React from 'react';
 import BookIndexItem from '../books/book_index_item';
-import StatusesIndex from '../statuses/statuses_index';
+import StatusesIndexContainer from '../statuses/statuses_index_container';
 import BookshelfIndexContainer from '../bookshelves/bookshelf_index_container';
 
 class SearchIndex extends React.Component {

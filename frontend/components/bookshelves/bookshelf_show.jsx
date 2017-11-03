@@ -1,7 +1,7 @@
 import React from 'react';
 import BookshelfShowItem from  './bookshelf_show_item';
 import BookshelfIndexContainer from './bookshelf_index_container';
-import StatusesIndex from '../statuses/statuses_index';
+import StatusesIndexContainer from '../statuses/statuses_index_container';
 
 class BookshelfShow extends React.Component {
   constructor(props) {
