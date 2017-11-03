@@ -13,7 +13,7 @@ class SearchIndex extends React.Component {
       return (
         <div className="book-search-main-div">
           <div className="book-search-side-bar">
-            <StatusesIndex />
+            <StatusesIndexContainer />
             <BookshelfIndexContainer />
           </div>
           <div className="book-search-index-main-div">
@@ -26,7 +26,7 @@ class SearchIndex extends React.Component {
       return (
         <div className="book-search-main-div">
           <div className="book-search-side-bar">
-            <StatusesIndex />
+            <StatusesIndexContainer />
             <BookshelfIndexContainer />
           </div>
           <div className="book-search-index-main-div">

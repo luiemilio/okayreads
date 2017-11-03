@@ -14,9 +14,9 @@ class StatusesIndex extends React.Component {
         <h1>bookshelves</h1>
         <div>
           <ul className="statuses-index-ul">
-            <Link to="/statuses/read">read ({this.props.readBookIds.length})</Link>
-            <Link to="/statuses/reading">currently-reading ({this.props.readingBookIds.length})</Link>
-            <Link to="/statuses/unread">to-read ({this.props.unreadBookIds.length})</Link>
+            <Link to="/statuses/read">read</Link>
+            <Link to="/statuses/reading">currently-reading</Link>
+            <Link to="/statuses/unread">to-read</Link>
           </ul>
         </div>
       </div>

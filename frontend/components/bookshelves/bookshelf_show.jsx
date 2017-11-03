@@ -18,7 +18,7 @@ class BookshelfShow extends React.Component {
       return (
         <div className="bookshelf-show-main-div">
           <div>
-            <StatusesIndex />
+            <StatusesIndexContainer />
             <BookshelfIndexContainer />
           </div>
           <div className="bookshelf-show-div-ul">

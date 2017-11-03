@@ -30,7 +30,7 @@ class StatusShow extends React.Component {
       return (
         <div className="status-show-main-div">
           <div>
-            <StatusesIndex />
+            <StatusesIndexContainer />
             <BookshelfIndexContainer />
           </div>
           <ul className="status-show-ul-div">
@@ -42,7 +42,7 @@ class StatusShow extends React.Component {
       return (
         <div className="status-show-main-div">
           <div>
-            <StatusesIndex />
+            <StatusesIndexContainer />
             <BookshelfIndexContainer />
           </div>
         <div>

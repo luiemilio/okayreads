@@ -123,7 +123,7 @@ class BookShow extends React.Component {
       return (
         <div className="book-show-all">
           <div className="book-show-side-bar">
-            <StatusesIndex />
+            <StatusesIndexContainer />
             <BookshelfIndexContainer />
           </div>
           <div className="book-show-main-div">
